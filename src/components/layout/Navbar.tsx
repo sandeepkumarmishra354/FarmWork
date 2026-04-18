@@ -26,7 +26,7 @@ export default function Navbar() {
       padding: scrolled ? '1rem 0' : '1.5rem 0'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href="/FarmWork" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Sprout color="var(--primary)" size={28} />
           <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 800 }}>
             Farm<span style={{ color: 'var(--primary)' }}>Work</span>
@@ -35,15 +35,15 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }} className="desktop-nav">
-          <a href="/" className="nav-link">Home</a>
-          <a href="/about" className="nav-link">About</a>
-          <a href="/features" className="nav-link">Solutions</a>
-          <a href="/contact" className="btn btn-primary" style={{ padding: '0.5rem 1.25rem' }}>Join Waitlist</a>
+          <a href="/FarmWork" className="nav-link">Home</a>
+          <a href="/FarmWork/about" className="nav-link">About</a>
+          <a href="/FarmWork/features" className="nav-link">Solutions</a>
+          <a href="/FarmWork/contact" className="btn btn-primary" style={{ padding: '0.5rem 1.25rem' }}>Join Waitlist</a>
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
-          className="mobile-toggle btn-outline" 
+        <button
+          className="mobile-toggle btn-outline"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{ padding: '0.5rem', borderRadius: '8px', display: 'none' }}
         >
@@ -64,10 +64,10 @@ export default function Navbar() {
             flexDirection: 'column',
             gap: '1rem'
           }}>
-            <a href="/" className="nav-link">Home</a>
-            <a href="/about" className="nav-link">About</a>
-            <a href="/features" className="nav-link">Solutions</a>
-            <a href="/contact" className="btn btn-primary" style={{ textAlign: 'center' }}>Join Waitlist</a>
+            <a href="/FarmWork" className="nav-link">Home</a>
+            <a href="/FarmWork/about" className="nav-link">About</a>
+            <a href="/FarmWork/features" className="nav-link">Solutions</a>
+            <a href="/FarmWork/contact" className="btn btn-primary" style={{ textAlign: 'center' }}>Join Waitlist</a>
           </div>
         )}
       </div>
