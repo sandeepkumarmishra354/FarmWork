@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sprout, Briefcase, BarChart, CheckCircle2 } from 'lucide-react';
+import { getPath } from '../../utils/paths';
 
 const tabsData = [
   {
@@ -10,7 +11,7 @@ const tabsData = [
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
     description: 'On-time labour sourcing, cost visibility, and stronger market linkages.',
-    image: '/media/img-3.jpeg',
+    image: getPath('/media/img-3.jpeg'),
     bullets: [
       'Affordable mechanization mapped specifically to your cluster.',
       'Reliable workforce mapping during critical sowing and harvest windows.',
@@ -24,7 +25,7 @@ const tabsData = [
     color: 'var(--text-primary)',
     bg: 'var(--bg-color)',
     description: 'Consistent work discovery and formal financial integration. Step out of the informal economy entirely.',
-    image: '/media/img-4.jpeg',
+    image: getPath('/media/img-4.jpeg'),
     bullets: [
       'Visibility into stable, geographically clustered work pipelines.',
       'Formal digital ledgers proving payouts and consistent labour.',
@@ -38,7 +39,7 @@ const tabsData = [
     color: 'var(--accent)',
     bg: 'var(--bg-color)',
     description: 'Deep pipeline visibility and instantly digitised ledgers. Simplify your operational overhead.',
-    image: '/media/img-2.jpeg',
+    image: getPath('/media/img-2.jpeg'),
     bullets: [
       'Unified dashboard for payroll automation and fund advances.',
       'Maximize physical asset utilization across hyper-local clusters.',

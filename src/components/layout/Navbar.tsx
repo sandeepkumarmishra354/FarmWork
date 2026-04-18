@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { getPath } from '../../utils/paths';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ export default function Navbar() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         
         {/* Brand */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href={getPath("/")} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: 900, letterSpacing: '-0.05em' }}>
             Farm<span style={{ color: 'var(--primary)' }}>Work.</span>
           </span>
@@ -35,9 +36,9 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="desktop-nav">
-          <a href="/about" className="nav-link">Vision</a>
-          <a href="/features" className="nav-link">Platform</a>
-          <a href="/contact" className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>Join Waitlist</a>
+          <a href={getPath("/about")} className="nav-link">Vision</a>
+          <a href={getPath("/features")} className="nav-link">Platform</a>
+          <a href={getPath("/contact")} className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>Join Waitlist</a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -63,9 +64,9 @@ export default function Navbar() {
             gap: '1.5rem',
             height: '100vh'
           }}>
-            <a href="/about" className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Vision</a>
-            <a href="/features" className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Platform</a>
-            <a href="/contact" className="nav-link" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary)' }}>Join Waitlist</a>
+            <a href={getPath("/about")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Vision</a>
+            <a href={getPath("/features")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Platform</a>
+            <a href={getPath("/contact")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary)' }}>Join Waitlist</a>
           </div>
         )}
       </div>
