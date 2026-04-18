@@ -1,61 +1,82 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Target, Eye, AlertTriangle } from 'lucide-react';
+import { FadeIn, HoverScale } from '../components/ui/Animations';
+import { AnimatedSprout } from '../components/ui/AgriSVGs';
 ---
 
 <Layout title="About FarmWork">
   <!-- Hero Section -->
-  <section style="padding: 10rem 0 6rem 0; text-align: center; border-bottom: 1px solid var(--surface-border);">
-    <div class="container animate-fade-in-up">
-      <h1 class="heading-xl" style="margin-bottom: 1.5rem;">Behind every harvest <span class="text-gradient">is labour.</span></h1>
-      <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
-        Most small farmers cannot afford machinery, landless workers lack identity, and operations are managed through chaotic phone calls. We are here to change that.
-      </p>
+  <section style="padding: 12rem 0 6rem 0; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 70%); filter: blur(60px); z-index: -1;"></div>
+    
+    <div class="container relative z-10" style="position: relative;">
+      <div style="position: absolute; top: -50px; left: 20%; z-index: -1; opacity: 0.8;">
+        <AnimatedSprout client:load size={120} color="rgba(22, 163, 74, 0.4)" />
+      </div>
+
+      <FadeIn client:load direction="up">
+        <h1 class="heading-xl" style="margin-bottom: 1.5rem; color: var(--text-primary);">Behind every harvest <span class="text-gradient">is labour.</span></h1>
+        <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+          Most small farmers cannot afford machinery, landless workers lack identity, and operations are managed through chaotic phone calls. We are here to change that.
+        </p>
+      </FadeIn>
     </div>
   </section>
 
-  <!-- The Problem -->
-  <section style="padding: 6rem 0;">
+  <!-- The Problem w/ Image -->
+  <section style="padding: 8rem 0; background: #ffffff; border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border);">
     <div class="container">
       <div class="grid grid-cols-2" style="align-items: center; gap: 4rem;">
-        <div>
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: #EF4444; background: rgba(239, 68, 68, 0.1); padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; margin-bottom: 1.5rem;">
+        <FadeIn client:load direction="right">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: #DC2626; background: rgba(220, 38, 38, 0.1); padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; margin-bottom: 1.5rem;">
             <AlertTriangle size={18} /> The Core Problem
           </div>
-          <h2 class="heading-lg" style="margin-bottom: 1.5rem;">The informal agriculture economy is failing its backbone.</h2>
+          <h2 class="heading-lg" style="margin-bottom: 1.5rem; color: var(--text-primary);">The informal agriculture economy is failing its backbone.</h2>
           <ul style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
             <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Farmers:</strong> High machinery costs and crippling labour shortages at peak crop stages lead to delayed operations and lost income.</p>
+              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Farmers:</strong> High machinery costs and crippling labour shortages at peak crop stages lead to delayed operations and lost income.</p>
             </li>
             <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Workers:</strong> Remaining stuck in the informal economy means no proof of income, no financial identity, and limited access to credit.</p>
+              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Workers:</strong> Remaining stuck in the informal economy means no proof of income, no financial identity, and limited access to credit.</p>
             </li>
             <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Buyers:</strong> Lack of production intelligence creates disconnected, unpredictable market linkages.</p>
+              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Buyers:</strong> Lack of production intelligence creates disconnected, unpredictable market linkages.</p>
             </li>
           </ul>
-        </div>
-        <div class="glass" style="padding: 3rem; background: linear-gradient(to bottom right, rgba(239, 68, 68, 0.05), rgba(6, 9, 7, 0.4)); border-color: rgba(239, 68, 68, 0.2);">
-          <div style="font-size: 4rem; font-weight: 800; color: #EF4444; margin-bottom: 1rem; line-height: 1;">140M+</div>
-          <p style="font-size: 1.5rem; color: #fff; font-family: var(--font-heading);">agricultural labourers in India are operating entirely offline.</p>
-        </div>
+        </FadeIn>
+        
+        <FadeIn client:load direction="left" delay={0.2} style={{ height: '100%' }}>
+          <div style="position: relative; height: 100%; border-radius: 24px; overflow: hidden; border: 1px solid var(--surface-border); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+            <img src="/media/img-6.jpeg" alt="Hardworking agriculture labourers" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5;" />
+            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem; background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 30%, transparent 100%);">
+              <div style="font-size: 4rem; font-weight: 800; color: #DC2626; margin-bottom: 0.5rem; line-height: 1;">140M+</div>
+              <p style="font-size: 1.3rem; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600;">agricultural labourers in India are operating entirely offline.</p>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </div>
   </section>
 
   <!-- The Vision -->
-  <section style="padding: 6rem 0; background: rgba(16, 185, 129, 0.05); border-top: 1px solid rgba(16, 185, 129, 0.1);">
-    <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
-      <div style="width: 64px; height: 64px; background: var(--primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem auto; box-shadow: 0 10px 30px var(--primary-glow);">
-        <Eye size={32} color="#fff" />
-      </div>
-      <h2 class="heading-lg" style="margin-bottom: 1.5rem;">Our Core Vision</h2>
-      <p style="font-size: 1.5rem; color: #fff; font-weight: 500; font-family: var(--font-heading); line-height: 1.5;">
-        To become the ultimate operating system for India's agricultural work economy. Bringing visibility, predictability, and prosperity to the foundation of agriculture.
-      </p>
+  <section style="padding: 10rem 0; background: url('/media/img-7.jpeg') center/cover fixed; position: relative;">
+    <div style="position: absolute; inset: 0; background: rgba(250, 250, 249, 0.85); backdrop-filter: blur(8px);"></div>
+    <div class="container text-center relative z-10" style="max-width: 800px; margin: 0 auto;">
+      <FadeIn client:visible direction="up">
+        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem auto; box-shadow: 0 10px 40px var(--primary-glow);">
+          <Eye size={40} color="#fff" />
+        </div>
+        <h2 class="heading-lg" style="margin-bottom: 2rem; color: var(--text-primary);">Our Core Vision</h2>
+        <div class="glass" style="padding: 3rem; background: rgba(255,255,255,0.9); border: 1px solid var(--surface-border);">
+          <p style="font-size: 1.8rem; color: var(--text-primary); font-weight: 500; font-family: var(--font-heading); line-height: 1.5;">
+            To become the ultimate operating system for India's agricultural work economy. Bringing visibility, predictability, and prosperity to the foundation of agriculture.
+          </p>
+        </div>
+      </FadeIn>
     </div>
   </section>
 </Layout>
