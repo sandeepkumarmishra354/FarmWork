@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Tractor, Sprout, Briefcase, BarChart } from 'lucide-react';
+---
+
+<Layout title="Solutions">
+  <section style="padding: 8rem 0 4rem 0; text-align: center;">
+    <div class="container animate-fade-in-up">
+      <h1 class="heading-xl" style="margin-bottom: 1.5rem;">Solutions for <span class="text-gradient">Every Stakeholder</span></h1>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+        From small and marginal farmers to labour agents and input retailers, FarmWork generates mutual value across the chain.
+      </p>
+    </div>
+  </section>
+
+  <!-- Value Propositions Breakdown -->
+  <section style="padding: 4rem 0 8rem 0;">
+    <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
+      
+      <!-- Farmers -->
+      <div class="glass-card" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; border-color: rgba(16, 185, 129, 0.3);">
+        <div style="background: rgba(16, 185, 129, 0.05); border-radius: 16px; padding: 3rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div style="margin-bottom: 1rem;"><Sprout size={64} color="var(--primary)" /></div>
+          <h2 style="font-size: 2rem; color: #fff; font-family: var(--font-heading);">Farmers</h2>
+        </div>
+        <div>
+          <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;">On-time labour, cost visibility, markets.</h3>
+          <ul style="display: flex; flex-direction: column; gap: 1rem;">
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Affordable mechanization access without needing to purchase expensive machinery.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Reliable workforce sourcing precisely during crucial sowing, spraying, and harvesting windows.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Build a credible transaction history and output market linkages for better pricing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Workers -->
+      <div class="glass-card" style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center; border-color: rgba(217, 245, 67, 0.3);">
+        <div>
+          <h3 style="font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem;">Consistent work, credit & insurance.</h3>
+          <ul style="display: flex; flex-direction: column; gap: 1rem;">
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Visibility into stable, geographically clustered work opportunities.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Formal digital records of payouts enabling proof-of-work identity.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• Direct pathway to formal financial services including credit and farm worker insurance.</li>
+          </ul>
+        </div>
+        <div style="background: rgba(217, 245, 67, 0.05); border-radius: 16px; padding: 3rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div style="margin-bottom: 1rem;"><Briefcase size={64} color="var(--accent)" /></div>
+          <h2 style="font-size: 2rem; color: #fff; font-family: var(--font-heading);">Workers</h2>
+        </div>
+      </div>
+
+      <!-- Agents & Retailers -->
+      <div class="glass-card" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; border-color: rgba(16, 185, 129, 0.3);">
+        <div style="background: rgba(16, 185, 129, 0.05); border-radius: 16px; padding: 3rem; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div style="margin-bottom: 1rem;"><BarChart size={64} color="var(--primary)" /></div>
+          <h2 style="font-size: 2rem; color: #fff; font-family: var(--font-heading); line-height: 1.1;">Agents &<br/>Retailers</h2>
+        </div>
+        <div>
+          <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;">Pipeline visibility & digitised ledgers.</h3>
+          <ul style="display: flex; flex-direction: column; gap: 1rem;">
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• <strong>Labour Agents:</strong> Unified dashboard for managing pipeline, worker payments, and automatic payroll.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• <strong>Mechanization Partners:</strong> Maximize asset utilization by servicing localized clusters easily.</li>
+            <li style="color: var(--text-secondary); font-size: 1.1rem;">• <strong>Input Retailers:</strong> Track sales, maintain purchase histories, and digitize traditional ledgers efficiently.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Moat Statement -->
+  <section style="padding: 4rem 0 8rem 0; text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <h3 style="font-size: 2rem; color: #fff; margin-bottom: 1rem; font-family: var(--font-heading);">Our Strategic Moat</h3>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+        FarmWork is deeply embedded in daily farm operations. Because we collect proprietary worker and farm data across geographical clusters, our platform generates powerful network effects and high switching costs, locking down immense value for all participants.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    .glass-card {
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+    }
+  }
+</style>

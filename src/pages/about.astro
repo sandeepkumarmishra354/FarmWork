@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Target, Eye, AlertTriangle } from 'lucide-react';
+---
+
+<Layout title="About FarmWork">
+  <!-- Hero Section -->
+  <section style="padding: 10rem 0 6rem 0; text-align: center; border-bottom: 1px solid var(--surface-border);">
+    <div class="container animate-fade-in-up">
+      <h1 class="heading-xl" style="margin-bottom: 1.5rem;">Behind every harvest <span class="text-gradient">is labour.</span></h1>
+      <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+        Most small farmers cannot afford machinery, landless workers lack identity, and operations are managed through chaotic phone calls. We are here to change that.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <div class="grid grid-cols-2" style="align-items: center; gap: 4rem;">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: #EF4444; background: rgba(239, 68, 68, 0.1); padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; margin-bottom: 1.5rem;">
+            <AlertTriangle size={18} /> The Core Problem
+          </div>
+          <h2 class="heading-lg" style="margin-bottom: 1.5rem;">The informal agriculture economy is failing its backbone.</h2>
+          <ul style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+            <li style="display: flex; gap: 1rem;">
+              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Farmers:</strong> High machinery costs and crippling labour shortages at peak crop stages lead to delayed operations and lost income.</p>
+            </li>
+            <li style="display: flex; gap: 1rem;">
+              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Workers:</strong> Remaining stuck in the informal economy means no proof of income, no financial identity, and limited access to credit.</p>
+            </li>
+            <li style="display: flex; gap: 1rem;">
+              <div style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; margin-top: 8px;"></div>
+              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong>For Buyers:</strong> Lack of production intelligence creates disconnected, unpredictable market linkages.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="glass" style="padding: 3rem; background: linear-gradient(to bottom right, rgba(239, 68, 68, 0.05), rgba(6, 9, 7, 0.4)); border-color: rgba(239, 68, 68, 0.2);">
+          <div style="font-size: 4rem; font-weight: 800; color: #EF4444; margin-bottom: 1rem; line-height: 1;">140M+</div>
+          <p style="font-size: 1.5rem; color: #fff; font-family: var(--font-heading);">agricultural labourers in India are operating entirely offline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Vision -->
+  <section style="padding: 6rem 0; background: rgba(16, 185, 129, 0.05); border-top: 1px solid rgba(16, 185, 129, 0.1);">
+    <div class="container text-center" style="max-width: 800px; margin: 0 auto;">
+      <div style="width: 64px; height: 64px; background: var(--primary); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem auto; box-shadow: 0 10px 30px var(--primary-glow);">
+        <Eye size={32} color="#fff" />
+      </div>
+      <h2 class="heading-lg" style="margin-bottom: 1.5rem;">Our Core Vision</h2>
+      <p style="font-size: 1.5rem; color: #fff; font-weight: 500; font-family: var(--font-heading); line-height: 1.5;">
+        To become the ultimate operating system for India's agricultural work economy. Bringing visibility, predictability, and prosperity to the foundation of agriculture.
+      </p>
+    </div>
+  </section>
+</Layout>

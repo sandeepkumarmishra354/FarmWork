@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Mail, MapPin, Phone } from 'lucide-react';
+---
+
+<Layout title="Contact Us">
+  <section style="padding: 8rem 0 6rem 0;">
+    <div class="container animate-fade-in-up">
+      <div class="grid grid-cols-2" style="gap: 4rem;">
+        
+        <!-- Contact Info -->
+        <div>
+          <h1 class="heading-lg" style="margin-bottom: 1.5rem;">Join the <span class="text-gradient">Waitlist</span></h1>
+          <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem;">
+            Whether you are a farmer looking for reliable labour, an agent managing workers, or a mechanization partner, FarmWork is built for you.
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <Mail size={24} />
+              </div>
+              <div>
+                <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.25rem;">Email Us</h4>
+                <p style="color: var(--text-secondary);">hello@farmwork.in</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <Phone size={24} />
+              </div>
+              <div>
+                <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.25rem;">Call Us</h4>
+                <p style="color: var(--text-secondary);">+91 1800-FARM-WRK</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                <MapPin size={24} />
+              </div>
+              <div>
+                <h4 style="font-size: 1.2rem; color: #fff; margin-bottom: 0.25rem;">Headquarters</h4>
+                <p style="color: var(--text-secondary);">AgriTech Hub, Bangalore, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-card" style="padding: 3rem;">
+          <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div style="display: flex; gap: 1rem;">
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label style="color: var(--text-secondary); font-size: 0.9rem;">First Name</label>
+                <input type="text" class="form-input" placeholder="Rajesh" />
+              </div>
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
+                <label style="color: var(--text-secondary); font-size: 0.9rem;">Last Name</label>
+                <input type="text" class="form-input" placeholder="Kumar" />
+              </div>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label style="color: var(--text-secondary); font-size: 0.9rem;">Phone Number or Email</label>
+              <input type="text" class="form-input" placeholder="+91 9876543210" />
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label style="color: var(--text-secondary); font-size: 0.9rem;">I am a...</label>
+              <select class="form-input" style="appearance: none;">
+                <option value="farmer">Farmer</option>
+                <option value="agent">Labour Agent / Contractor</option>
+                <option value="partner">Mechanization Partner</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label style="color: var(--text-secondary); font-size: 0.9rem;">Message (Optional)</label>
+              <textarea class="form-input" rows="4" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="margin-top: 1rem; width: 100%; padding: 1rem;">Submit Details</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .form-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--surface-border);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-glow);
+  }
+
+  @media (max-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
