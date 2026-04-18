@@ -30,7 +30,7 @@ export default function Navbar() {
         {/* Brand */}
         <a href={getPath("/")} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: 900, letterSpacing: '-0.05em' }}>
-            Farm<span style={{ color: 'var(--primary)' }}>Work.</span>
+            <span style={{ color: 'var(--primary)' }}>Farm</span>Work.
           </span>
         </a>
 
