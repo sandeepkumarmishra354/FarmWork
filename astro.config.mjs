@@ -8,6 +8,7 @@ const isProd = process.env.NODE_ENV === 'production';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: "https://sandeepkumarmishra354.github.io",
-  base: isProd ? "/FarmWork" : "/"
+  site: "https://farmworkindia.com",
+  // base: isProd ? "/FarmWork" : "/"
+  base: "/"
 });
