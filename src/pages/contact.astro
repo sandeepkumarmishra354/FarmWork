@@ -1,114 +1,151 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Mail, MapPin, Phone } from 'lucide-react';
-import { FadeIn, HoverScale } from '../components/ui/Animations';
-import { BlobBackground } from '../components/ui/AgriSVGs';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 ---
 
-<Layout title="Contact Us">
-  <section style="padding: 10rem 0 6rem 0; position: relative; overflow: hidden;">
-    <BlobBackground client:load />
-
-    <div class="container relative z-10">
-      <div class="grid grid-cols-2" style="gap: 4rem;">
+<Layout title="Contact Us | FarmWork">
+  
+  <section style="min-height: 100vh; padding: 10rem 0 6rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
+    <div class="container">
+      
+      {/* The Master Contact Card (Dashboard Style) */}
+      <div class="fade-up" style="max-width: 1100px; margin: 0 auto; background: #ffffff; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; border: 1px solid var(--surface-border);">
         
-        <!-- Contact Info -->
-        <FadeIn client:load direction="right">
-          <h1 class="heading-lg" style="margin-bottom: 1.5rem; color: var(--text-primary);">Join the <span class="text-gradient">Waitlist</span></h1>
-          <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem;">
-            Whether you are a farmer looking for reliable labour, an agent managing workers, or a mechanization partner, FarmWork is built for you.
-          </p>
+        {/* Left Side: Dark Information Panel */}
+        <div class="contact-info-panel" style="flex: 1; min-width: 350px; background: var(--text-primary); color: #ffffff; padding: 5rem 4rem; position: relative; overflow: hidden;">
+          {/* Subtle Background Pattern */}
+          <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none;"></div>
           
-          <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <HoverScale client:load>
-                <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(22, 163, 74, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; border: 1px solid rgba(22, 163, 74, 0.2);">
-                  <Mail size={24} />
-                </div>
-              </HoverScale>
-              <div>
-                <h4 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.25rem;">Email Us</h4>
-                <p style="color: var(--text-secondary);">hello@farmwork.in</p>
-              </div>
-            </div>
-
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <HoverScale client:load>
-                <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(22, 163, 74, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; border: 1px solid rgba(22, 163, 74, 0.2);">
-                  <Phone size={24} />
-                </div>
-              </HoverScale>
-              <div>
-                <h4 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.25rem;">Call Us</h4>
-                <p style="color: var(--text-secondary);">+91 1800-FARM-WRK</p>
-              </div>
-            </div>
-
-            <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
-              <HoverScale client:load>
-                <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(22, 163, 74, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; border: 1px solid rgba(22, 163, 74, 0.2);">
-                  <MapPin size={24} />
-                </div>
-              </HoverScale>
-              <div>
-                <h4 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.25rem;">Headquarters</h4>
-                <p style="color: var(--text-secondary);">AgriTech Hub, Bangalore, India</p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-
-        <!-- Contact Form -->
-        <FadeIn client:load direction="left" delay={0.2}>
-          <div class="glass-card" style="padding: 3rem; background: #ffffff;">
-            <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-              <div style="display: flex; gap: 1rem;">
-                <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">First Name</label>
-                  <input type="text" class="form-input" placeholder="Rajesh" />
-                </div>
-                <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem;">
-                  <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">Last Name</label>
-                  <input type="text" class="form-input" placeholder="Kumar" />
-                </div>
-              </div>
+          <div style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column;">
+            <h2 class="heading-lg" style="color: #fff; margin-bottom: 1rem;">Let's Build <br/><span style="color: var(--primary);">Together.</span></h2>
+            <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 4rem; line-height: 1.6;">
+              Whether you're a farmer needing machinery, an agent managing a cluster, or a partner seeking integration—drop us a line.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-top: auto;">
               
-              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">Phone Number or Email</label>
-                <input type="text" class="form-input" placeholder="+91 9876543210" />
+              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <Mail size={24} color="var(--primary)" />
+                </div>
+                <div>
+                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Email Us</p>
+                  <p style="font-size: 1.2rem; font-weight: 500;">hello@farmwork.in</p>
+                </div>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">I am a...</label>
-                <select class="form-input" style="appearance: none;">
-                  <option value="farmer">Farmer</option>
-                  <option value="agent">Labour Agent / Contractor</option>
-                  <option value="partner">Mechanization Partner</option>
-                  <option value="other">Other</option>
-                </select>
+              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <Phone size={24} color="var(--primary)" />
+                </div>
+                <div>
+                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Call Us</p>
+                  <p style="font-size: 1.2rem; font-weight: 500;">+91 1800-FARM-WRK</p>
+                </div>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.9rem;">Message (Optional)</label>
-                <textarea class="form-input" rows="4" placeholder="Tell us about your requirements..."></textarea>
+              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
+                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <MapPin size={24} color="var(--primary)" />
+                </div>
+                <div>
+                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">HQ Location</p>
+                  <p style="font-size: 1.2rem; font-weight: 500; line-height: 1.5;">Agri-Tech Campus,<br/>New Delhi, India 110001</p>
+                </div>
               </div>
 
-              <HoverScale client:load>
-                <button type="button" class="btn btn-primary" style="margin-top: 1rem; width: 100%; padding: 1rem;">Submit Details</button>
-              </HoverScale>
-            </form>
+            </div>
           </div>
-        </FadeIn>
+        </div>
+
+        {/* Right Side: Solid Input Form */}
+        <div style="flex: 1.5; min-width: 400px; padding: 5rem 4rem; background: #ffffff;">
+          <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 2rem;">Send a Message</h3>
+          
+          <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <div class="grid grid-cols-2" style="gap: 1.5rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="fname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">First Name</label>
+                <input type="text" id="fname" placeholder="John" required class="solid-input" />
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label for="lname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Last Name</label>
+                <input type="text" id="lname" placeholder="Doe" required class="solid-input" />
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="email" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Email Address / Phone</label>
+              <input type="text" id="email" placeholder="hello@example.com" required class="solid-input" />
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+              <label style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">I am a...</label>
+              <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
+                  <input type="radio" name="role" value="farmer" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Farmer
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
+                  <input type="radio" name="role" value="agent" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Labour Agent
+                </label>
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
+                  <input type="radio" name="role" value="partner" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Mech Partner
+                </label>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+              <label for="message" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Message details</label>
+              <textarea id="message" rows="4" placeholder="How can we help you?" class="solid-input" style="resize: vertical;"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" style="margin-top: 2rem; width: 100%; border-radius: 12px; padding: 1.5rem; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+              Send Message <Send size={20} />
+            </button>
+
+          </form>
+        </div>
 
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
+  /* Solid Input Styling replacing the floating trick */
+  .solid-input {
+    appearance: none;
+    box-sizing: border-box;
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background: #f8fafc;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    font-family: inherit;
+  }
+  .solid-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+  }
+  .solid-input:hover {
+    background: #f1f5f9;
+  }
+  .solid-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  }
+
   @media (max-width: 768px) {
-    .grid-cols-2 {
-      grid-template-columns: 1fr;
+    .contact-info-panel, [style*="min-width: 400px"] {
+      min-width: 100% !important;
+      padding: 3rem 2rem !important;
     }
   }
 </style>

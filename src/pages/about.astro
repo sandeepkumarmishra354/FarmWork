@@ -1,82 +1,100 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Target, Eye, AlertTriangle } from 'lucide-react';
-import { FadeIn, HoverScale } from '../components/ui/Animations';
-import { AnimatedSprout } from '../components/ui/AgriSVGs';
+import { Network, Search, Briefcase } from 'lucide-react';
 ---
 
-<Layout title="About FarmWork">
-  <!-- Hero Section -->
-  <section style="padding: 12rem 0 6rem 0; text-align: center; position: relative; overflow: hidden;">
-    <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(22,163,74,0.1) 0%, transparent 70%); filter: blur(60px); z-index: -1;"></div>
-    
-    <div class="container relative z-10" style="position: relative;">
-      <div style="position: absolute; top: -50px; left: 20%; z-index: -1; opacity: 0.8;">
-        <AnimatedSprout client:load size={120} color="rgba(22, 163, 74, 0.4)" />
-      </div>
-
-      <FadeIn client:load direction="up">
-        <h1 class="heading-xl" style="margin-bottom: 1.5rem; color: var(--text-primary);">Behind every harvest <span class="text-gradient">is labour.</span></h1>
-        <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
-          Most small farmers cannot afford machinery, landless workers lack identity, and operations are managed through chaotic phone calls. We are here to change that.
-        </p>
-      </FadeIn>
-    </div>
-  </section>
-
-  <!-- The Problem w/ Image -->
-  <section style="padding: 8rem 0; background: #ffffff; border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border);">
-    <div class="container">
-      <div class="grid grid-cols-2" style="align-items: center; gap: 4rem;">
-        <FadeIn client:load direction="right">
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: #DC2626; background: rgba(220, 38, 38, 0.1); padding: 0.5rem 1rem; border-radius: 999px; font-weight: 600; margin-bottom: 1.5rem;">
-            <AlertTriangle size={18} /> The Core Problem
-          </div>
-          <h2 class="heading-lg" style="margin-bottom: 1.5rem; color: var(--text-primary);">The informal agriculture economy is failing its backbone.</h2>
-          <ul style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
-            <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Farmers:</strong> High machinery costs and crippling labour shortages at peak crop stages lead to delayed operations and lost income.</p>
-            </li>
-            <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Workers:</strong> Remaining stuck in the informal economy means no proof of income, no financial identity, and limited access to credit.</p>
-            </li>
-            <li style="display: flex; gap: 1rem;">
-              <div style="width: 8px; height: 8px; background: #DC2626; border-radius: 50%; margin-top: 8px;"></div>
-              <p style="color: var(--text-secondary); font-size: 1.1rem; flex: 1;"><strong style="color: var(--text-primary);">For Buyers:</strong> Lack of production intelligence creates disconnected, unpredictable market linkages.</p>
-            </li>
-          </ul>
-        </FadeIn>
+<Layout title="Vision | About FarmWork">
+  
+  <section style="min-height: 100vh; padding: 10rem 0 6rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
+    <div class="container fade-up">
+      
+      {/* The Dense Bento Wall Container */}
+      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem;">
         
-        <FadeIn client:load direction="left" delay={0.2} style={{ height: '100%' }}>
-          <div style="position: relative; height: 100%; border-radius: 24px; overflow: hidden; border: 1px solid var(--surface-border); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
-            <img src="/media/img-6.jpeg" alt="Hardworking agriculture labourers" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5;" />
-            <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 3rem; background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 30%, transparent 100%);">
-              <div style="font-size: 4rem; font-weight: 800; color: #DC2626; margin-bottom: 0.5rem; line-height: 1;">140M+</div>
-              <p style="font-size: 1.3rem; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600;">agricultural labourers in India are operating entirely offline.</p>
-            </div>
+        {/* TOP ROW: Manifesto (Span 8) */}
+        <div style="grid-column: span 8; background: #ffffff; border-radius: 32px; padding: 4rem; border: 1px solid var(--surface-border); display: flex; flex-direction: column; justify-content: center;">
+          <div style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--surface-border); border-radius: 999px; font-weight: 600; margin-bottom: 2rem; background: var(--bg-color); color: var(--primary); align-self: flex-start; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+            The Core Issue
           </div>
-        </FadeIn>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Vision -->
-  <section style="padding: 10rem 0; background: url('/media/img-7.jpeg') center/cover fixed; position: relative;">
-    <div style="position: absolute; inset: 0; background: rgba(250, 250, 249, 0.85); backdrop-filter: blur(8px);"></div>
-    <div class="container text-center relative z-10" style="max-width: 800px; margin: 0 auto;">
-      <FadeIn client:visible direction="up">
-        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem auto; box-shadow: 0 10px 40px var(--primary-glow);">
-          <Eye size={40} color="#fff" />
-        </div>
-        <h2 class="heading-lg" style="margin-bottom: 2rem; color: var(--text-primary);">Our Core Vision</h2>
-        <div class="glass" style="padding: 3rem; background: rgba(255,255,255,0.9); border: 1px solid var(--surface-border);">
-          <p style="font-size: 1.8rem; color: var(--text-primary); font-weight: 500; font-family: var(--font-heading); line-height: 1.5;">
-            To become the ultimate operating system for India's agricultural work economy. Bringing visibility, predictability, and prosperity to the foundation of agriculture.
+          <h1 class="heading-xl" style="line-height: 1; margin-bottom: 1.5rem; color: var(--text-primary);">
+            A Massive Sector Operating <br/> Without An Engine.
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; line-height: 1.6;">
+            The unorganized agriculture segment functions on fragmented phone calls, cash economies, and sheer physical effort. The infrastructure completely breaks down at scale.
           </p>
         </div>
-      </FadeIn>
+
+        {/* TOP ROW: Statistic (Span 4) */}
+        <div style="grid-column: span 4; background: var(--primary); border-radius: 32px; padding: 4rem; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -20%; right: -20%; width: 250px; height: 250px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+          
+          <span style="font-size: 5.5rem; font-weight: 900; line-height: 1; font-family: var(--font-heading); position: relative; z-index: 10;">140M</span>
+          <span style="font-size: 1.1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 10;">Invisible Workers</span>
+          <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9; line-height: 1.4; position: relative; z-index: 10;">Operating in India entirely without proof of work.</p>
+        </div>
+
+        {/* MID ROW: Card 1 - Farmers (Span 4) */}
+        <div style="grid-column: span 4; background: var(--bg-color); border-radius: 32px; padding: 3rem; border: 1px solid var(--surface-border);">
+          <div style="width: 50px; height: 50px; border-radius: 12px; background: #fff; border: 1px solid var(--surface-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <Search size={24} color="var(--primary)" />
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Farmers</h3>
+          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+            Labour shortages during narrow harvest windows lead to immense losses. Machinery is unaffordable without clustered resource sharing.
+          </p>
+        </div>
+
+        {/* MID ROW: Card 2 - Workers (Span 4) */}
+        <div style="grid-column: span 4; background: var(--text-primary); border-radius: 32px; padding: 3rem; color: #ffffff;">
+          <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <Briefcase size={24} color="#ffffff" />
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #fff;">Workers</h3>
+          <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">
+            Without a verified digital identity, labourers completely lack access to formal credit lines or farm-specific insurance pathways.
+          </p>
+        </div>
+
+        {/* MID ROW: Card 3 - Markets (Span 4) */}
+        <div style="grid-column: span 4; background: var(--bg-color); border-radius: 32px; padding: 3rem; border: 1px solid var(--surface-border);">
+          <div style="width: 50px; height: 50px; border-radius: 12px; background: #fff; border: 1px solid var(--surface-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <Network size={24} color="var(--accent)" />
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Markets</h3>
+          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+            Zero production visibility guarantees distress sales. Strong linkages necessitate verifiable output intelligence prior to arrival.
+          </p>
+        </div>
+
+        {/* BOT ROW: Vision Banner (Span 12) */}
+        <div style="grid-column: span 12; background: #ffffff; border-radius: 32px; border: 1px solid var(--surface-border); overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
+          
+          <div style="flex: 1; padding: 5rem 4rem; position: relative; z-index: 10;">
+            <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-primary); line-height: 1.1; font-family: var(--font-heading);">
+              Building the <span style="color: var(--primary);">Digital Infrastructure</span><br/> for Rural Farm Work.
+            </h2>
+          </div>
+          
+          <div style="flex: 1; position: relative; min-height: 300px; height: 100%;">
+            <img src="/media/img-6.jpeg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: right center;" alt="Farming Panorama" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(to right, #ffffff 0%, transparent 100%);"></div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   </section>
+
 </Layout>
+
+<style>
+  @media (max-width: 1024px) {
+    [style*="grid-template-columns: repeat(12, 1fr)"] > div {
+      grid-column: span 12 !important;
+    }
+    [style*="grid-column: span 12;"] {
+      flex-direction: column !important;
+    }
+  }
+</style>
