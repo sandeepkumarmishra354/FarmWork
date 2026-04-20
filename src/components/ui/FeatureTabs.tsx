@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sprout, Briefcase, BarChart, CheckCircle2 } from 'lucide-react';
+import { Sprout, Briefcase, Handshake, CheckCircle2, Forklift } from 'lucide-react';
 import { getPath } from '../../utils/paths';
 
 const tabsData = [
@@ -10,42 +10,64 @@ const tabsData = [
     icon: <Sprout size={20} />,
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'On-time labour sourcing, cost visibility, and stronger market linkages.',
-    image: getPath('/media/img-3.jpeg'),
+    description: 'Get access to available agricultural workers for different farm activities, right when you need them. Find and book right mechanisation services like tractors, harvesters, sprayers, and other equipment based on your farm requirements.',
+    image: getPath('/media/farmers.jpeg'),
     bullets: [
-      'Affordable mechanization mapped specifically to your cluster.',
-      'Reliable workforce mapping during critical sowing and harvest windows.',
-      'Verifiable output logs to secure advance buyer placements.'
+      'Check product availability from local retailers without visiting multiple shops.',
+      'Get visibility of worker, inputs, and machinery to make timely and informed decisions.',
+      'Rate every service you use and get access to more skilled, trusted partners over time.',
+      'Receive updates from retailers and service providers about availability, pricing, and offers.',
+      'From inputs to worker to machinery—view all your farm costs in one place recorded by your engaged partners.'
     ]
   },
   {
     id: 1,
-    title: 'Workers',
+    title: 'Worker Agent',
     icon: <Briefcase size={20} />,
-    color: 'var(--text-primary)',
+    color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'Consistent work discovery and formal financial integration. Step out of the informal economy entirely.',
-    image: getPath('/media/img-4.jpeg'),
+    description: 'Get access to nearby farm work based on demand—reduce idle time and uncertainty.',
+    image: getPath('/media/img-7.jpeg'),
     bullets: [
-      'Visibility into stable, geographically clustered work pipelines.',
-      'Formal digital ledgers proving payouts and consistent labour.',
-      'Direct integrations accessing farm worker insurance and credit.'
+      'Organise and manage workers, assign jobs, and track work easily.',
+      'Connect with more farmers and increase chances of regular employment.',
+      'Maintain digital records of jobs completed and payments received.',
+      'Monitor outstanding balances and send reminders easily.',
+      'Creat a track record of your work and reliability on the platform.',
+      'Stay connected with farmers for work updates, availability, and coordination.'
     ]
   },
   {
     id: 2,
-    title: 'Agents & Retailers',
-    icon: <BarChart size={20} />,
-    color: 'var(--accent)',
+    title: 'Input Partner',
+    icon: <Handshake size={20} />,
+    color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'Deep pipeline visibility and instantly digitised ledgers. Simplify your operational overhead.',
-    image: getPath('/media/img-2.jpeg'),
+    description: 'Digitise the store and manage your business efficiently.',
+    image: getPath('/media/input-partner.png'),
     bullets: [
-      'Unified dashboard for payroll automation and fund advances.',
-      'Maximize physical asset utilization across hyper-local clusters.',
-      'Securely manage and digitize traditional input sales histories.'
+      'Record all sales digitally—no more manual maintainance in multiple registers.',
+      'Monitor outstanding balances and send reminders easily.',
+      'Share product updates, offers, and notifications directly.',
+      'Get visibility and connect with a wider network of farmers through the platform.'
     ]
-  }
+  },
+  {
+    id: 3,
+    title: 'Mechanization Partner',
+    icon: <Forklift size={20} />,
+    color: 'var(--primary)',
+    bg: 'var(--bg-color)',
+    description: 'List your machines, reach more farmers, and manage bookings with ease.',
+    image: getPath('/media/mechanization.jpeg'),
+    bullets: [
+      'Get visibility and connect with a wider network of farmers who need machinery services.',
+      'Track all service requests and bookings in one place.',
+      'Avoid missed calls and manual coordination.',
+      'Maintain digital records of jobs completed and payments received.',
+      'Share availability, pricing, and updates directly with farmers.'
+    ]
+  },
 ];
 
 export default function FeatureTabs() {
@@ -54,8 +76,8 @@ export default function FeatureTabs() {
   const selectedData = tabsData[activeTab];
 
   return (
-    <div style={{ width: '100%', maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-      
+    <div style={{ width: '100%', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+
       {/* Sleek Tab Navigation */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
         {tabsData.map((tab) => {
@@ -89,9 +111,10 @@ export default function FeatureTabs() {
       </div>
 
       {/* The Active Dashboard Window */}
-      <div style={{ 
-        background: '#ffffff', 
-        borderRadius: '32px', 
+      <div style={{
+        width: '100%',
+        background: '#ffffff',
+        borderRadius: '18px',
         border: '1px solid var(--surface-border)',
         boxShadow: '0 20px 50px rgba(0,0,0,0.04)',
         overflow: 'hidden',
@@ -115,7 +138,7 @@ export default function FeatureTabs() {
               <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
                 {selectedData.description}
               </p>
-              
+
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: 0, padding: 0, listStyle: 'none' }}>
                 {selectedData.bullets.map((bullet, idx) => (
                   <li key={idx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', fontSize: '1.1rem', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.5 }}>
@@ -128,10 +151,19 @@ export default function FeatureTabs() {
 
             {/* Right Image Area */}
             <div style={{ position: 'relative', minHeight: '350px' }}>
-              <img 
-                src={selectedData.image} 
-                alt={selectedData.title} 
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
+              <img
+                src={selectedData.image}
+                alt={selectedData.title}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+              {/* Blur & Gradient Veil */}
+              <div 
+                style={{ 
+                  position: 'absolute', 
+                  inset: 0, 
+                  background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.4) 30%, transparent 100%)',
+                
+                }} 
               />
             </div>
           </motion.div>

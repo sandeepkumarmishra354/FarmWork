@@ -36,9 +36,10 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="desktop-nav">
-          <a href={getPath("/about")} className="nav-link">Vision</a>
-          <a href={getPath("/features")} className="nav-link">Platform</a>
-          <a href={getPath("/contact")} className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>Join Waitlist</a>
+          <a href={getPath("/about")} className="nav-link">VISION</a>
+          {/* <a href={getPath("/features")} className="nav-link">PLATFORM</a> */}
+          <a href={getPath("/partner-with-us")} className="nav-link">PARTNER WITH US</a>
+          <a href={getPath("/contact")} className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>CONTACT</a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -64,9 +65,10 @@ export default function Navbar() {
             gap: '1.5rem',
             height: '100vh'
           }}>
-            <a href={getPath("/about")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Vision</a>
-            <a href={getPath("/features")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>Platform</a>
-            <a href={getPath("/contact")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary)' }}>Join Waitlist</a>
+            <a href={getPath("/about")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>VISION</a>
+            {/* <a href={getPath("/features")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>PLATFORM</a> */}
+            <a href={getPath("/partner-with-us")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800 }}>PARTNER WITH US</a>
+            <a href={getPath("/contact")} className="nav-link" style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary)' }}>CONTACT</a>
           </div>
         )}
       </div>
