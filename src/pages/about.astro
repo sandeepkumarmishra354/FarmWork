@@ -1,101 +1,179 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Network, Search, Briefcase } from 'lucide-react';
+import { Network, Search, Briefcase, Users, Cog, Store, FileText, Wallet, LineChart } from 'lucide-react';
 import { getPath } from '../utils/paths';
 ---
 
 <Layout title="Vision | About FarmWork">
   
-  <section style="min-height: 100vh; padding: 10rem 0 6rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
+  <section style="min-height: 100vh; padding: 12rem 0 8rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
     <div class="container fade-up">
       
-      {/* The Dense Bento Wall Container */}
-      <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem;">
+      {/* Center Aligned Editorial Header */}
+      <div style="margin-bottom: 6rem; max-width: 800px;">
+        <p style="font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;">
+          We're building
+        </p>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(3rem, 5vw, 4rem); font-weight: 900; line-height: 1; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+          The digital infrastructure layer for farm work.
+        </h2>
+        <p style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.6; max-width: 650px;">
+          One platform that connects every stakeholder in the agricultural ecosystem — and records every interaction as structured, valuable data.
+        </p>
+      </div>
+
+      {/* Symmetrical Premium Grid */}
+      <div class="identical-grid">
         
-        {/* TOP ROW: Manifesto (Span 8) */}
-        <div style="grid-column: span 8; background: #ffffff; border-radius: 32px; padding: 4rem; border: 1px solid var(--surface-border); display: flex; flex-direction: column; justify-content: center;">
-          <div style="display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--surface-border); border-radius: 999px; font-weight: 600; margin-bottom: 2rem; background: var(--bg-color); color: var(--primary); align-self: flex-start; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-            The Core Issue
+        {/* Card 1 */}
+        <div class="bento-item identical-card">
+          <p class="card-watermark">01</p>
+          <div class="card-icon-box">
+            <Users size={24} color="var(--primary)" />
           </div>
-          <h1 class="heading-xl" style="line-height: 1; margin-bottom: 1.5rem; color: var(--text-primary);">
-            A Massive Sector Operating <br/> Without An Engine.
-          </h1>
-          <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; line-height: 1.6;">
-            The unorganized agriculture segment functions on fragmented phone calls, cash economies, and sheer physical effort. The infrastructure completely breaks down at scale.
-          </p>
+          <h3>Real-Time Labour Access</h3>
+          <p class="desc">Farmers connect with verified worker agents for specific farm tasks — from land preparation to post-harvest — right when they need them.</p>
+        </div>
+        
+        {/* Card 2 */}
+        <div class="bento-item identical-card">
+          <p class="card-watermark">02</p>
+          <div class="card-icon-box">
+            <Cog size={24} color="var(--primary)" />
+          </div>
+          <h3>Mechanisation as a Service</h3>
+          <p class="desc">Crop and geography-based clusters connect farmers with machinery providers. No ownership, no capital risk — access when needed.</p>
         </div>
 
-        {/* TOP ROW: Statistic (Span 4) */}
-        <div style="grid-column: span 4; background: var(--primary); border-radius: 32px; padding: 4rem; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: -20%; right: -20%; width: 250px; height: 250px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
-          
-          <span style="font-size: 5.5rem; font-weight: 900; line-height: 1; font-family: var(--font-heading); position: relative; z-index: 10;">140M</span>
-          <span style="font-size: 1.1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 10;">Invisible Workers</span>
-          <p style="margin-top: 1rem; font-size: 1rem; opacity: 0.9; line-height: 1.4; position: relative; z-index: 10;">Operating in India entirely without proof of work.</p>
+        {/* Card 3 */}
+        <div class="bento-item identical-card">
+           <p class="card-watermark">03</p>
+           <div class="card-icon-box">
+             <Store size={24} color="var(--primary)" />
+           </div>
+           <h3>Input Partner Network</h3>
+           <p class="desc">Farmers check product availability from local retailers digitally. Retailers manage sales, track balances, and reach more farmers.</p>
         </div>
 
-        {/* MID ROW: Card 1 - Farmers (Span 4) */}
-        <div style="grid-column: span 4; background: var(--bg-color); border-radius: 32px; padding: 3rem; border: 1px solid var(--surface-border);">
-          <div style="width: 50px; height: 50px; border-radius: 12px; background: #fff; border: 1px solid var(--surface-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <Search size={24} color="var(--primary)" />
-          </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Farmers</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
-            Labour shortages during narrow harvest windows lead to immense losses. Machinery is unaffordable without clustered resource sharing.
-          </p>
+        {/* Card 4 */}
+        <div class="bento-item identical-card">
+           <p class="card-watermark">04</p>
+           <div class="card-icon-box">
+             <FileText size={24} color="var(--primary)" />
+           </div>
+           <h3>Digital Record Keeping</h3>
+           <p class="desc">Every farm activity — labour deployed, inputs purchased, machinery used — is recorded. Farmers get cost-of-production intelligence automatically.</p>
         </div>
 
-        {/* MID ROW: Card 2 - Workers (Span 4) */}
-        <div style="grid-column: span 4; background: var(--text-primary); border-radius: 32px; padding: 3rem; color: #ffffff;">
-          <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <Briefcase size={24} color="#ffffff" />
+        {/* Card 5 */}
+        <div class="bento-item identical-card">
+          <p class="card-watermark">05</p>
+          <div class="card-icon-box">
+            <Wallet size={24} color="var(--primary)" />
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #fff;">Workers</h3>
-          <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.6;">
-            Without a verified digital identity, labourers completely lack access to formal credit lines or farm-specific insurance pathways.
-          </p>
+          <h3>Financial Identity for Workers</h3>
+          <p class="desc">Work history, payment records, and income proof for every farm worker — enabling access to credit, insurance, and formal financial services.</p>
         </div>
 
-        {/* MID ROW: Card 3 - Markets (Span 4) */}
-        <div style="grid-column: span 4; background: var(--bg-color); border-radius: 32px; padding: 3rem; border: 1px solid var(--surface-border);">
-          <div style="width: 50px; height: 50px; border-radius: 12px; background: #fff; border: 1px solid var(--surface-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <Network size={24} color="var(--accent)" />
+        {/* Card 6 */}
+        <div class="bento-item identical-card">
+          <p class="card-watermark">06</p>
+          <div class="card-icon-box">
+            <LineChart size={24} color="var(--primary)" />
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Markets</h3>
-          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
-            Zero production visibility guarantees distress sales. Strong linkages necessitate verifiable output intelligence prior to arrival.
-          </p>
-        </div>
-
-        {/* BOT ROW: Vision Banner (Span 12) */}
-        <div style="grid-column: span 12; background: #ffffff; border-radius: 32px; border: 1px solid var(--surface-border); overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative;">
-          
-          <div style="flex: 1; padding: 5rem 4rem; position: relative; z-index: 10;">
-            <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-primary); line-height: 1.1; font-family: var(--font-heading);">
-              Building the <span style="color: var(--primary);">Digital Infrastructure</span><br/> for Rural Farm Work.
-            </h2>
-          </div>
-          
-          <div style="flex: 1; position: relative; min-height: 300px; height: 100%;">
-            <img src={getPath("/media/img-6.jpeg")} style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: right center;" alt="Farming Panorama" />
-            <div style="position: absolute; inset: 0; background: linear-gradient(to right, #ffffff 0%, transparent 100%);"></div>
-          </div>
-
+          <h3>Market Linkage & Output Intelligence</h3>
+          <p class="desc">Farmers connect with buyers early. Output players gain forward visibility on production volumes, quality, and geography.</p>
         </div>
 
       </div>
+
     </div>
   </section>
 
 </Layout>
 
 <style>
+  .identical-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .identical-card {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .identical-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-watermark {
+    font-family: var(--font-heading);
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    color: var(--primary);
+    opacity: 0.05;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    pointer-events: none;
+    margin: 0;
+  }
+
+  .card-icon-box {
+    margin-bottom: 3rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--surface-border);
+  }
+
+  .identical-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 10;
+  }
+
+  .identical-card p.desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Mobile Responsiveness */
   @media (max-width: 1024px) {
-    [style*="grid-template-columns: repeat(12, 1fr)"] > div {
-      grid-column: span 12 !important;
+    .identical-grid { 
+      grid-template-columns: repeat(2, 1fr); 
     }
-    [style*="grid-column: span 12;"] {
-      flex-direction: column !important;
+  }
+
+  @media (max-width: 768px) {
+    .identical-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .identical-card {
+      padding: 2rem;
+    }
+    .card-icon-box {
+      margin-bottom: 2rem;
     }
   }
 </style>
