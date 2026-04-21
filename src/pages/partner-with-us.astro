@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Cpu, Tractor, Package, Landmark, ShieldCheck, LineChart, Building, Lightbulb, TrendingUp, Users, Target, Toolbox, Link, Briefcase, Globe, Search, Settings, Shield, ArrowRight } from 'lucide-react';
+import { getPath } from '../utils/paths';
+---
+
+<Layout title="Partner With Us | FarmWork">
+
+  {/* HERO SECTION */}
+  <section style="position: relative; padding: 14rem 0 10rem 0; min-height: 85vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--bg-color);">
+    <div style="position: absolute; inset: 0; z-index: 0; opacity: 0.7; mix-blend-mode: luminosity;">
+      <img src={getPath('/media/farmers.jpeg')} alt="Rural Agriculture Background" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%);" />
+      <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-color) 0%, transparent 60%, var(--bg-color) 100%);"></div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-color) 0%, transparent 50%, var(--bg-color) 100%);"></div>
+    </div>
+    
+    <div class="container fade-up" style="position: relative; z-index: 10; text-align: center; max-width: 1000px;">
+      <!-- <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border: 1px solid var(--surface-border); border-radius: 999px; margin-bottom: 2.5rem;">
+        <Globe size={18} color="var(--primary)" />
+        <span style="font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Ecosystem Partners</span>
+      </div> -->
+      <h1 class="heading-display" style="margin-bottom: 2rem;">Collaborate With <span style="color: var(--primary)">Farmwork</span>.</h1>
+      <p style="font-size: 1.5rem; color: var(--text-secondary); line-height: 1.6; max-width: 800px; margin: 0 auto;">
+        Farmwork's community is a structured, growing network of farmers, workers, and service providers. For organisations that want to engage with rural agriculture — at depth, not breadth — this is the platform.
+      </p>
+    </div>
+  </section>
+
+  {/* 9-GRID MATRIX */}
+  <section style="padding: 6rem 0; background: var(--surface-color);">
+    <div class="container fade-up delay-1">
+      <div class="identical-grid">
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">01</p>
+          <div class="card-icon-box"><Cpu size={24} color="var(--primary)" /></div>
+          <h3>Agritech & Precision Farming</h3>
+          <p class="desc">Access early-adopter farmer clusters for pilots. Refine your technology in real field conditions. Scale through established trust networks — without rebuilding distribution from scratch.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">02</p>
+          <div class="card-icon-box"><Tractor size={24} color="var(--primary)" /></div>
+          <h3>Mechanisation Companies</h3>
+          <p class="desc">Deploy machinery into geo-clustered farmer groups who are already willing to pay for services. Farmwork handles demand aggregation, scheduling, and records — you bring the machine.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">03</p>
+          <div class="card-icon-box"><Package size={24} color="var(--primary)" /></div>
+          <h3>Input & Agrochemical</h3>
+          <p class="desc">Reach farmers at the point of need through verified input partner networks. Get visibility into consumption patterns, crop cycles, and product adoption at ground level.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">04</p>
+          <div class="card-icon-box"><Landmark size={24} color="var(--primary)" /></div>
+          <h3>Financial Institutions</h3>
+          <p class="desc">Farmwork creates verifiable income and transaction records for 140M+ informal farm workers — a population that has never had formal financial identity. Partner to offer credit.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">05</p>
+          <div class="card-icon-box"><ShieldCheck size={24} color="var(--primary)" /></div>
+          <h3>Insurance Companies</h3>
+          <p class="desc">Access structured data on farm workers, crop activities, and agricultural operations. Design contextual insurance products for a segment that has historically been uninsurable.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">06</p>
+          <div class="card-icon-box"><LineChart size={24} color="var(--primary)" /></div>
+          <h3>Output Buyers & Agri Traders</h3>
+          <p class="desc">Get forward visibility on production — crop type, estimated output, geography, and harvest timelines. Build direct sourcing relationships with farmer communities before the season ends.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">07</p>
+          <div class="card-icon-box"><Building size={24} color="var(--primary)" /></div>
+          <h3>Government & Agencies</h3>
+          <p class="desc">Farmwork's ground-level data provides visibility into agricultural labour markets, crop activities, and rural livelihoods — supporting better policy design and programme delivery.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">08</p>
+          <div class="card-icon-box"><Lightbulb size={24} color="var(--primary)" /></div>
+          <h3>Research & Institutions</h3>
+          <p class="desc">Partner on agricultural data research, rural economics, and labour market studies. Access structured, verified datasets from active farming communities across India.</p>
+        </div>
+
+        <div class="bento-item identical-card">
+          <p class="card-watermark">09</p>
+          <div class="card-icon-box"><TrendingUp size={24} color="var(--primary)" /></div>
+          <h3>Impact Funds & Investors</h3>
+          <p class="desc">We are in our early stages — building the community, the platform, and the data layer. If you believe India's agriculture needs systems, not sympathy, let's build this together.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* AMBASSADORS SECTION (Centered Glassmorphism on Deep Green) */}
+  <section style="padding: 8rem 0; background: var(--primary); color: #ffffff; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; right: 0; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); pointer-events: none;"></div>
+    
+    <div class="container fade-up" style="position: relative; z-index: 10;">
+      
+      {/* Centered Editorial Header */}
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 5rem auto;">
+        <p style="font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;">
+          Village Level Ambassadors
+        </p>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+          Rural India needs leaders who understand both the soil and the system.
+        </h2>
+        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 2.5rem;">
+          We're looking for young agripreneurs and rural entrepreneurs who want to build the Farmwork community in their villages and districts. You will be the ground layer of India's agricultural transformation.
+        </p>
+        <a href={getPath("/contact")} class="btn" style="background: #ffffff; color: var(--primary); border: none;">
+          Apply to be an Ambassador <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
+        </a>
+      </div>
+
+      {/* 2x2 Premium Glass Cards */}
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;" class="ambassador-grid">
+        
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3.5rem; position: relative; overflow: hidden; transition: transform 0.3s ease; cursor: default;">
+          <div style="position: absolute; right: -10%; bottom: -10%; opacity: 0.05; pointer-events: none;">
+            <Users size={200} />
+          </div>
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+            <Users size={28} color="#ffffff" />
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">1. Community Building</h3>
+          <p style="font-size: 1.15rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Onboard farmers, worker agents, and input retailers in your geography. Build and grow a trusted local network on the Farmwork platform.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3.5rem; position: relative; overflow: hidden; transition: transform 0.3s ease; cursor: default;">
+          <div style="position: absolute; right: -10%; bottom: -10%; opacity: 0.05; pointer-events: none;">
+            <Target size={200} />
+          </div>
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+            <Target size={28} color="#ffffff" />
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">2. Entrepreneurial Opportunity</h3>
+          <p style="font-size: 1.15rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Earn through platform activity in your community. Build a sustainable rural business while creating real value for farmers and workers around you.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3.5rem; position: relative; overflow: hidden; transition: transform 0.3s ease; cursor: default;">
+          <div style="position: absolute; right: -10%; bottom: -10%; opacity: 0.05; pointer-events: none;">
+            <Toolbox size={200} />
+          </div>
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+            <Toolbox size={28} color="#ffffff" />
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">3. Tools & Support</h3>
+          <p style="font-size: 1.15rem; color: rgba(255,255,255,0.75); line-height: 1.6;">Get access to Farmwork's platform, training, field support, and a growing network of agripreneurs solving the same challenges across India.</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3.5rem; position: relative; overflow: hidden; transition: transform 0.3s ease; cursor: default;">
+          <div style="position: absolute; right: -10%; bottom: -10%; opacity: 0.05; pointer-events: none;">
+            <Link size={200} />
+          </div>
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+            <Link size={28} color="#ffffff" />
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">4. Part of Something Larger</h3>
+          <p style="font-size: 1.15rem; color: rgba(255,255,255,0.75); line-height: 1.6;">You won't just build a local business — you'll contribute to agricultural intelligence that shapes policies, attracts investment, and transforms rural livelihoods at scale.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  {/* STUDENTS & PROFESSIONALS BLOCK */}
+  <section style="padding: 3rem 0; background: var(--text-primary); color: #ffffff;">
+    <div class="container fade-up">
+      
+      <div style="text-align: center; margin-bottom: 6rem;">
+        <p style="font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;">
+          For Agri Students & Young Professionals
+        </p>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em; max-width: 800px; margin-left: auto; margin-right: auto; color: #fff">
+          Your degree deserves a problem worth solving.
+        </h2>
+        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+          India's most complex and impactful challenges are in rural agriculture. Farmwork is building at the intersection of technology, economics, and ground-level reality — and we want the next generation of thinkers involved.
+        </p>
+      </div>
+
+      {/* Massive Data Banner */}
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 6rem;" class="stats-split">
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 4rem; text-align: center;">
+          <h3 style="font-family: var(--font-heading); font-size: 6rem; font-weight: 900; line-height: 1; color: var(--primary-light); margin-bottom: 1rem;">230M</h3>
+          <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.5;">People directly dependent on agricultural work in India. Their livelihoods are shaped by systems that barely exist — yet.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 4rem; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+          <h3 style="font-family: var(--font-heading); font-size: 4rem; font-weight: 900; line-height: 1; color: #fff; margin-bottom: 1rem;">SRAM</h3>
+          <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.5;"><span style="color: var(--accent); font-weight: bold;">Smart Rural Agri ecosystem Management</span> — श्रम. A new operating model for the people who feed India.</p>
+        </div>
+      </div>
+
+      {/* 5-Point Flex Outline Grid */}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        
+        <div class="student-card">
+          <Briefcase size={28} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">1. Internship</h4>
+          <p style="font-weight: 600; color: var(--primary-light); margin-bottom: 1rem;">Field & Community Research</p>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Spend time in rural communities. Understand how farm work actually functions, and help Farmwork map the ground reality.</p>
+        </div>
+
+        <div class="student-card">
+          <Settings size={28} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">2. Fellowship</h4>
+          <p style="font-weight: 600; color: var(--primary-light); margin-bottom: 1rem;">Product & Platform Building</p>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Work directly on Farmwork's platform — from UX design tailored for rural users to data systems that capture farm intelligence.</p>
+        </div>
+
+        <div class="student-card">
+          <Search size={28} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">3. Research</h4>
+          <p style="font-weight: 600; color: var(--primary-light); margin-bottom: 1rem;">Agri Economics & Labour</p>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Conduct rigorous research on farm labour, mechanisation adoption, and financial inclusion using ground-level data.</p>
+        </div>
+
+        <div class="student-card">
+          <Toolbox size={28} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">4. Co-build</h4>
+          <p style="font-weight: 600; color: var(--primary-light); margin-bottom: 1rem;">Specific Challenge Solutions</p>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6;">Have an idea for a specific agri problem? Farmwork's ecosystem is the testbed. Bring your solution — we'll connect you.</p>
+        </div>
+
+        <div class="student-card">
+          <Shield size={28} color="var(--accent)" style={{ marginBottom: '1.5rem' }} />
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;">5. Ambassador</h4>
+          <p style="font-weight: 600; color: var(--primary-light); margin-bottom: 1rem;">Village Level Leadership</p>
+          <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.6;">If you come from a rural background or want to work at grassroots — join as an Ambassador and build on ground.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  {/* CTA FOOTER */}
+  <section style="padding: 8rem 0; background: var(--primary); text-align: center;">
+    <div class="container fade-up delay-1">
+      <p style="font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem;">
+        Get Involved
+      </p>
+      <h2 class="heading-xl" style="color: #ffffff; margin-bottom: 2rem;">
+        India's agriculture needs systems,<br/>not sympathy.
+      </h2>
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); line-height: 1.6; max-width: 800px; margin: 0 auto 4rem auto;">
+        Whether you're an agritech company, a financial institution, a young agripreneur, or an agri student — there is a role for you in the Farmwork ecosystem.
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center;" class="cta-buttons">
+        <a href={getPath("/contact")} class="btn" style="background: #ffffff; color: var(--primary); padding: 1rem 3rem;">
+          Partner With Us <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
+        </a>
+        <a href={getPath("/contact")} class="btn" style="background: transparent; border: 2px solid #ffffff; color: #ffffff; padding: 1rem 3rem;">
+          Become an Ambassador <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Base Grid Structure */
+  .identical-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Structural 9-Grid Partner Card */
+  .identical-card {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .identical-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .card-watermark {
+    font-family: var(--font-heading);
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    color: var(--primary);
+    opacity: 0.05;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    pointer-events: none;
+    margin: 0;
+  }
+
+  .card-icon-box {
+    margin-bottom: 3rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--surface-border);
+  }
+
+  .identical-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 10;
+  }
+
+  .identical-card p.desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Academic Dark Card */
+  .student-card {
+    padding: 2.5rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .student-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.3);
+    transform: translateY(-5px);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 1024px) {
+    .identical-grid { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
+    .ambassador-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .identical-grid { 
+      grid-template-columns: 1fr; 
+    }
+    .identical-card {
+      padding: 2rem;
+    }
+    .stats-split {
+      grid-template-columns: 1fr;
+    }
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
+</style>
