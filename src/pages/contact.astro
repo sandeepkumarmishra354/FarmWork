@@ -64,7 +64,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
           
           <form style="display: flex; flex-direction: column; gap: 1.5rem;">
             
-            <div class="grid grid-cols-2" style="gap: 1.5rem;">
+            <div class="grid grid-cols-2 contact-name-grid" style="gap: 1.5rem;">
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="fname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">First Name</label>
                 <input type="text" id="fname" placeholder="John" required class="solid-input" />
@@ -143,9 +143,42 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
   }
 
   @media (max-width: 768px) {
-    .contact-info-panel, [style*="min-width: 400px"] {
+    .contact-info-panel {
       min-width: 100% !important;
-      padding: 3rem 2rem !important;
+      padding: 2rem 1.25rem !important;
+      border-radius: 0 !important;
+    }
+    [style*="min-width: 400px"] {
+      min-width: 100% !important;
+      padding: 2rem 1.25rem !important;
+    }
+    [style*="border-radius: 40px"] {
+      border-radius: 16px !important;
+    }
+    .contact-name-grid {
+      grid-template-columns: 1fr !important;
+      gap: 0.875rem !important;
+    }
+    .solid-input {
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+      border-radius: 12px;
+    }
+    [style*="gap: 2.5rem"] {
+      gap: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-info-panel {
+      padding: 1.75rem 1rem !important;
+    }
+    [style*="min-width: 400px"] {
+      padding: 1.75rem 1rem !important;
+    }
+    .solid-input {
+      padding: 0.875rem 1rem;
+      font-size: 0.95rem;
     }
   }
 </style>
