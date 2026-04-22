@@ -174,7 +174,7 @@ export default function FeatureTabs() {
           min-height: 520px;
         }
         .feature-tab-content {
-          padding: 4rem 3rem;
+          padding: 3rem 2.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -189,13 +189,36 @@ export default function FeatureTabs() {
             min-height: unset !important;
           }
           .feature-tab-content {
-            padding: 2rem 1.5rem !important;
+            padding: 1.75rem 1.5rem !important;
             order: 1;
           }
+          .feature-tab-content h2 {
+            font-size: 1.75rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+          .feature-tab-content p {
+            font-size: 1rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .feature-tab-content li {
+            font-size: 0.95rem !important;
+            gap: 0.75rem !important;
+          }
           .feature-tab-image {
-            height: 220px !important;
+            height: 200px !important;
             min-height: unset !important;
             order: 0;
+          }
+        }
+        @media (max-width: 480px) {
+          .feature-tab-content {
+            padding: 1.25rem 1rem !important;
+          }
+          .feature-tab-content h2 {
+            font-size: 1.5rem !important;
+          }
+          .feature-tab-image {
+            height: 175px !important;
           }
         }
       `}</style>

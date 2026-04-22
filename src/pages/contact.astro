@@ -143,29 +143,42 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
   }
 
   @media (max-width: 768px) {
-    /* Break the flex card into stacked columns */
     .contact-info-panel {
       min-width: 100% !important;
-      padding: 2.5rem 1.5rem !important;
+      padding: 2rem 1.25rem !important;
       border-radius: 0 !important;
     }
-    /* Form panel */
     [style*="min-width: 400px"] {
       min-width: 100% !important;
-      padding: 2.5rem 1.5rem !important;
+      padding: 2rem 1.25rem !important;
     }
-    /* Outer card full bleed */
     [style*="border-radius: 40px"] {
-      border-radius: 20px !important;
+      border-radius: 16px !important;
     }
-    /* Name fields stack */
     .contact-name-grid {
       grid-template-columns: 1fr !important;
-      gap: 1rem !important;
+      gap: 0.875rem !important;
     }
-    /* Section spacing */
-    [style*="padding: 10rem 0 6rem 0"] {
-      padding: 5rem 0 3rem 0 !important;
+    .solid-input {
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+      border-radius: 12px;
+    }
+    [style*="gap: 2.5rem"] {
+      gap: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-info-panel {
+      padding: 1.75rem 1rem !important;
+    }
+    [style*="min-width: 400px"] {
+      padding: 1.75rem 1rem !important;
+    }
+    .solid-input {
+      padding: 0.875rem 1rem;
+      font-size: 0.95rem;
     }
   }
 </style>

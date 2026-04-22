@@ -150,77 +150,118 @@ ul {
 
 /* === MOBILE (≤768px) === */
 @media (max-width: 768px) {
-  /* Container padding tightened */
+  /* Container */
   .container {
     padding: 0 1.25rem;
   }
 
-  /* All heading sizes scaled down */
+  /* Headings */
   .heading-display {
-    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    font-size: clamp(2rem, 9vw, 3.5rem) !important;
     line-height: 1.05 !important;
   }
   .heading-xl {
-    font-size: clamp(2rem, 8vw, 3rem) !important;
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
   }
   .heading-lg {
-    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
   }
 
-  /* Section padding normalization */
+  /* Section padding — tighten non-hero sections */
+  section + section,
+  section ~ section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
   section {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
     min-height: unset !important;
   }
+  /* First section always clears the fixed navbar (~80px) */
+  body section:first-of-type {
+    padding-top: 5.5rem !important;
+  }
 
-  /* Force single column on all grids */
+  /* Grids */
   .grid-cols-2,
   .grid-cols-3,
   .grid-cols-4 {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
   }
 
-  /* Bento single column */
+  /* Bento */
   .bento-grid {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 0.875rem !important;
   }
   .col-span-2, .col-span-3, .row-span-2 {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
-
-  /* Bento card padding */
   .bento-item {
-    padding: 1.75rem !important;
-    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    border-radius: 16px !important;
   }
 
-  /* Buttons full-width on mobile */
+  /* Buttons — full width */
   .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem !important;
   }
 
   /* Fixed-height elements */
-  [style*="height: 700px"] {
-    height: 350px !important;
-  }
-  [style*="min-height: 550px"] {
+  [style*="height: 700px"] { height: 300px !important; }
+  [style*="min-height: 550px"] { min-height: unset !important; }
+  [style*="min-height: 85vh"],
+  [style*="min-height: 70vh"] {
     min-height: unset !important;
-  }
-  [style*="min-height: 85vh"] {
-    min-height: unset !important;
-    padding-top: 7rem !important;
-    padding-bottom: 4rem !important;
+    padding-top: 5rem !important;
+    padding-bottom: 3rem !important;
   }
 
-  /* Video hero sizing */
-  [style*="clamp(400px"] {
-    height: 280px !important;
+  /* Video hero */
+  [style*="clamp(400px"] { height: 260px !important; }
+}
+
+/* === SMALL PHONE (≤480px) === */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
   }
+
+  .heading-display {
+    font-size: clamp(1.75rem, 8vw, 2.75rem) !important;
+  }
+  .heading-xl {
+    font-size: clamp(1.5rem, 7vw, 2.25rem) !important;
+  }
+
+  section + section,
+  section ~ section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  section {
+    min-height: unset !important;
+  }
+  body section:first-of-type {
+    padding-top: 5rem !important;
+  }
+
+  .bento-item {
+    padding: 1.25rem !important;
+    border-radius: 14px !important;
+  }
+
+  .btn {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  /* Video hero */
+  [style*="clamp(400px"] { height: 220px !important; }
 }
 
 /* Minimalist floating inputs */
