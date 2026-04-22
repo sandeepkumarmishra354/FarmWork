@@ -79,7 +79,7 @@ export default function FeatureTabs() {
     <div style={{ width: '100%', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
 
       {/* Sleek Tab Navigation */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
         {tabsData.map((tab) => {
           const isActive = activeTab === tab.id;
           return (
@@ -89,14 +89,14 @@ export default function FeatureTabs() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem',
-                padding: '1rem 2rem',
+                gap: '0.5rem',
+                padding: '0.75rem 1.25rem',
                 borderRadius: '999px',
                 border: isActive ? `2px solid ${tab.color}` : '2px solid transparent',
                 background: isActive ? '#ffffff' : 'rgba(241, 245, 249, 0.5)',
                 color: isActive ? tab.color : 'var(--text-secondary)',
                 fontWeight: 600,
-                fontSize: '1.1rem',
+                fontSize: '0.95rem',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 boxShadow: isActive ? '0 10px 30px rgba(0,0,0,0.05)' : 'none',
@@ -110,7 +110,6 @@ export default function FeatureTabs() {
         })}
       </div>
 
-      {/* The Active Dashboard Window */}
       <div style={{
         width: '100%',
         background: '#ffffff',
@@ -118,7 +117,6 @@ export default function FeatureTabs() {
         border: '1px solid var(--surface-border)',
         boxShadow: '0 20px 50px rgba(0,0,0,0.04)',
         overflow: 'hidden',
-        minHeight: '550px',
         position: 'relative'
       }}>
         <AnimatePresence mode="wait">
@@ -128,10 +126,10 @@ export default function FeatureTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', height: '100%' }}
+            className="feature-tab-panel"
           >
             {/* Left Content Area */}
-            <div style={{ padding: '4rem 3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="feature-tab-content">
               <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', marginBottom: '1rem', color: 'var(--text-primary)' }}>
                 {selectedData.title}
               </h2>
@@ -141,7 +139,7 @@ export default function FeatureTabs() {
 
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: 0, padding: 0, listStyle: 'none' }}>
                 {selectedData.bullets.map((bullet, idx) => (
-                  <li key={idx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', fontSize: '1.1rem', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.5 }}>
+                  <li key={idx} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', fontSize: '1.05rem', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.5 }}>
                     <CheckCircle2 color={selectedData.color === 'var(--bg-color)' ? 'var(--primary)' : selectedData.color} size={22} style={{ flexShrink: 0, marginTop: '2px' }} />
                     {bullet}
                   </li>
@@ -150,7 +148,7 @@ export default function FeatureTabs() {
             </div>
 
             {/* Right Image Area */}
-            <div style={{ position: 'relative', minHeight: '350px' }}>
+            <div className="feature-tab-image">
               <img
                 src={selectedData.image}
                 alt={selectedData.title}
@@ -162,13 +160,45 @@ export default function FeatureTabs() {
                   position: 'absolute', 
                   inset: 0, 
                   background: 'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.4) 30%, transparent 100%)',
-                
                 }} 
               />
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
+
+      <style>{`
+        .feature-tab-panel {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          min-height: 520px;
+        }
+        .feature-tab-content {
+          padding: 4rem 3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .feature-tab-image {
+          position: relative;
+          min-height: 300px;
+        }
+        @media (max-width: 768px) {
+          .feature-tab-panel {
+            grid-template-columns: 1fr !important;
+            min-height: unset !important;
+          }
+          .feature-tab-content {
+            padding: 2rem 1.5rem !important;
+            order: 1;
+          }
+          .feature-tab-image {
+            height: 220px !important;
+            min-height: unset !important;
+            order: 0;
+          }
+        }
+      `}</style>
 
     </div>
   );

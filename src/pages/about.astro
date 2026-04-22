@@ -6,7 +6,7 @@ import { getPath } from '../utils/paths';
 
 <Layout title="Vision | About FarmWork">
   
-  <section style="min-height: 100vh; padding: 12rem 0 8rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
+  <section class="about-hero" style="min-height: 100vh; padding: 12rem 0 8rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
     <div class="container fade-up">
       
       {/* Center Aligned Editorial Header */}
@@ -168,12 +168,18 @@ import { getPath } from '../utils/paths';
   @media (max-width: 768px) {
     .identical-grid { 
       grid-template-columns: 1fr; 
+      gap: 1rem;
     }
     .identical-card {
-      padding: 2rem;
+      padding: 1.75rem;
     }
     .card-icon-box {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    /* About hero padding adjustment */
+    .about-hero {
+      padding: 7rem 0 4rem 0 !important;
+      min-height: unset !important;
     }
   }
 </style>

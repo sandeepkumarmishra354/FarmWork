@@ -138,35 +138,88 @@ ul {
 .col-span-3 { grid-column: span 3; }
 .row-span-2 { grid-row: span 2; }
 
+/* === TABLET (≤1024px) === */
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .col-span-2, .col-span-3 {
+    grid-column: span 1;
+  }
 }
 
+/* === MOBILE (≤768px) === */
 @media (max-width: 768px) {
-  /* Global Mobile Resets */
-  section, [style*="padding: 10rem"], [style*="padding: 12rem"], [style*="padding-top: 8rem"] {
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-  }
-  
-  .grid-cols-2, .grid-cols-3, .grid-cols-4 {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
-  }
-  
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .col-span-2, .col-span-3, .row-span-2 {
-    grid-column: span 1;
-    grid-row: span 1;
+  /* Container padding tightened */
+  .container {
+    padding: 0 1.25rem;
   }
 
+  /* All heading sizes scaled down */
+  .heading-display {
+    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    line-height: 1.05 !important;
+  }
+  .heading-xl {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  .heading-lg {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+  }
+
+  /* Section padding normalization */
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+    min-height: unset !important;
+  }
+
+  /* Force single column on all grids */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Bento single column */
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .col-span-2, .col-span-3, .row-span-2 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  /* Bento card padding */
+  .bento-item {
+    padding: 1.75rem !important;
+    border-radius: 20px !important;
+  }
+
+  /* Buttons full-width on mobile */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Fixed-height elements */
   [style*="height: 700px"] {
-    height: 400px !important;
+    height: 350px !important;
+  }
+  [style*="min-height: 550px"] {
+    min-height: unset !important;
+  }
+  [style*="min-height: 85vh"] {
+    min-height: unset !important;
+    padding-top: 7rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Video hero sizing */
+  [style*="clamp(400px"] {
+    height: 280px !important;
   }
 }
 

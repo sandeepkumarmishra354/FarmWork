@@ -64,7 +64,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
           
           <form style="display: flex; flex-direction: column; gap: 1.5rem;">
             
-            <div class="grid grid-cols-2" style="gap: 1.5rem;">
+            <div class="grid grid-cols-2 contact-name-grid" style="gap: 1.5rem;">
               <div style="display: flex; flex-direction: column; gap: 0.5rem;">
                 <label for="fname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">First Name</label>
                 <input type="text" id="fname" placeholder="John" required class="solid-input" />
@@ -143,9 +143,29 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
   }
 
   @media (max-width: 768px) {
-    .contact-info-panel, [style*="min-width: 400px"] {
+    /* Break the flex card into stacked columns */
+    .contact-info-panel {
       min-width: 100% !important;
-      padding: 3rem 2rem !important;
+      padding: 2.5rem 1.5rem !important;
+      border-radius: 0 !important;
+    }
+    /* Form panel */
+    [style*="min-width: 400px"] {
+      min-width: 100% !important;
+      padding: 2.5rem 1.5rem !important;
+    }
+    /* Outer card full bleed */
+    [style*="border-radius: 40px"] {
+      border-radius: 20px !important;
+    }
+    /* Name fields stack */
+    .contact-name-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+    /* Section spacing */
+    [style*="padding: 10rem 0 6rem 0"] {
+      padding: 5rem 0 3rem 0 !important;
     }
   }
 </style>
