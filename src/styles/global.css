@@ -176,9 +176,9 @@ ul {
   section {
     min-height: unset !important;
   }
-  /* First section always clears the fixed navbar (~80px) */
+  /* First section always clears the fixed navbar with breathing room */
   body section:first-of-type {
-    padding-top: 5.5rem !important;
+    padding-top: 7rem !important;
   }
 
   /* Grids */
@@ -247,7 +247,7 @@ ul {
     min-height: unset !important;
   }
   body section:first-of-type {
-    padding-top: 5rem !important;
+    padding-top: 6.5rem !important;
   }
 
   .bento-item {
