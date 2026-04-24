@@ -4,7 +4,29 @@ import { Cpu, Tractor, Package, Landmark, ShieldCheck, LineChart, Building, Ligh
 import { getPath } from '../utils/paths';
 ---
 
-<Layout title="Partner With Us | FarmWork">
+<Layout
+  title="Partner With Us | FarmWork — Collaborate in India's Agri Ecosystem"
+  description="Partner with FarmWork as an agritech company, mechanisation provider, input distributor, financial institution, or investor. Access India's largest structured agricultural community and build at scale."
+  canonicalPath="/partner-with-us"
+  pageType="CollectionPage"
+  keywords={[
+    'agritech partnership India',
+    'agriculture investor India',
+    'farm mechanisation partner',
+    'agri input distribution partner',
+    'rural market access India',
+    'agri fintech partnership',
+    'agricultural insurance partner India',
+    'market linkage agriculture partner',
+    'government agriculture data partner',
+    'agri research institution India',
+    'rural agri collaboration',
+    'agritech ecosystem India',
+    'agriculture startup partnership',
+    'farm technology investor India',
+    'collaborative agriculture India',
+  ]}
+>
 
   {/* HERO SECTION */}
   <section style="position: relative; padding: 10rem 0 6rem 0; min-height: 70vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--bg-color);">
@@ -96,6 +118,73 @@ import { getPath } from '../utils/paths';
         </div>
 
       </div>
+    </div>
+  </section>
+
+  {/* LET'S BUILD TOGETHER */}
+  <section style="padding: 5rem 0; background: var(--bg-color);">
+    <div class="container fade-up">
+
+      <div class="build-header">
+        <div>
+          <p style="font-weight: 700; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem;">Early Ecosystem</p>
+          <h2 class="build-headline">Let's Build Together.</h2>
+        </div>
+        <p class="build-intro">
+          We're looking to connect with everyone who believes Indian agriculture deserves better infrastructure.
+        </p>
+      </div>
+
+      <div class="build-grid">
+
+        <div class="build-card">
+          <span class="build-num">01</span>
+          <div>
+            <h3 class="build-card-title">Agritech Startups</h3>
+            <p class="build-card-desc">Solving for inputs, soil health, crop advisory, or farm intelligence — plug into an active farmer network and validate in real conditions.</p>
+          </div>
+        </div>
+
+        <div class="build-card">
+          <span class="build-num">02</span>
+          <div>
+            <h3 class="build-card-title">Mechanisation Startups</h3>
+            <p class="build-card-desc">Building the next generation of farm equipment and precision tools — reach geo-clustered demand without building your own distribution layer.</p>
+          </div>
+        </div>
+
+        <div class="build-card">
+          <span class="build-num">03</span>
+          <div>
+            <h3 class="build-card-title">Scaled Agri Enterprises</h3>
+            <p class="build-card-desc">In the agri-input or output space and looking to reach deeper into rural markets — we have the ground-level community and data intelligence to take you there.</p>
+          </div>
+        </div>
+
+        <div class="build-card">
+          <span class="build-num">04</span>
+          <div>
+            <h3 class="build-card-title">Market Linkage & Output</h3>
+            <p class="build-card-desc">Seeking production visibility and direct sourcing access — Farmwork's structured farmer data gives you a clear view before the harvest.</p>
+          </div>
+        </div>
+
+        <div class="build-card">
+          <span class="build-num">05</span>
+          <div>
+            <h3 class="build-card-title">Investors</h3>
+            <p class="build-card-desc">Who see the scale of the problem and the size of the opportunity — we're building the operating system for rural agriculture. Let's talk.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <a href={getPath("/contact")} class="btn btn-primary" style="display: inline-flex; width: auto; padding: 1rem 2.5rem;">
+          Start the Conversation <ArrowRight size={18} style={{ marginLeft: '0.75rem' }} />
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -413,5 +502,89 @@ import { getPath } from '../utils/paths';
     .stats-card { padding: 1.25rem; }
     .student-card { padding: 1.25rem; }
     .student-card h4 { font-size: 1.1rem !important; }
+    .build-header { grid-template-columns: 1fr !important; gap: 1rem !important; }
+    .build-card { padding: 1.25rem 1rem !important; }
+    .build-headline { font-size: clamp(2rem, 8vw, 3rem) !important; }
+    .build-intro { font-size: 1rem !important; }
+  }
+
+  /* ── Let's Build Together ─────────────────────────────── */
+  .build-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .build-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .build-intro {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 480px;
+    align-self: flex-end;
+    margin: 0;
+  }
+
+  .build-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .build-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--surface-border);
+    transition: background 0.2s ease;
+  }
+
+  .build-card:hover {
+    background: rgba(21,128,61,0.03);
+    padding-left: 0.75rem;
+    border-radius: 8px;
+    margin: 0 -0.75rem;
+  }
+
+  .build-num {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    padding-top: 0.35rem;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+
+  .build-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+  }
+
+  .build-card-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 680px;
   }
 </style>

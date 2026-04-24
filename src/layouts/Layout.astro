@@ -2,25 +2,48 @@
 import '../styles/global.css';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer.astro';
+import SEO from '../components/seo/SEO.astro';
 import { getPath } from '../utils/paths';
 
-interface Props {
+export interface Props {
   title: string;
   description?: string;
+  keywords?: string[];
+  canonicalPath?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
 }
 
-const { title, description = "FarmWork - The operating system for India's agricultural work economy." } = Astro.props;
+const {
+  title,
+  description = "FarmWork connects 140M+ farm workers, farmers, machinery providers, and input partners through one digital platform — the operating system for Indian agriculture.",
+  keywords = [],
+  canonicalPath = '/',
+  ogImage,
+  ogType = 'website',
+  pageType = 'WebPage',
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={getPath("/favicon.svg")} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | FarmWork</title>
-    <meta name="description" content={description} />
+
+    <!-- SEO component injects: title, description, keywords, OG, Twitter, JSON-LD -->
+    <SEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      canonicalPath={canonicalPath}
+      ogImage={ogImage}
+      ogType={ogType}
+      pageType={pageType}
+    />
   </head>
   <body>
     <div class="layout-wrapper">
