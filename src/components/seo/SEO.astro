@@ -1,0 +1,146 @@
+---
+/**
+ * SEO.astro — Reusable SEO meta component for FarmWork
+ * Drop this into any page's <head> via Layout.astro props.
+ */
+
+export interface Props {
+  /** Full page title (without the "| FarmWork" suffix — Layout adds that) */
+  title: string;
+  /** Page-specific meta description (150–160 chars ideal) */
+  description: string;
+  /** Extra page-specific keywords (merged with global base keywords) */
+  keywords?: string[];
+  /** Canonical page path, e.g. "/about" or "/" */
+  canonicalPath?: string;
+  /** Open Graph image URL (absolute). Defaults to /og-image.png */
+  ogImage?: string;
+  /** Open Graph type. Defaults to "website" */
+  ogType?: 'website' | 'article';
+  /** Schema.org page type for JSON-LD */
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+}
+
+const {
+  title,
+  description,
+  keywords = [],
+  canonicalPath = '/',
+  ogImage = 'https://farmworkindia.com/og-image.png',
+  ogType = 'website',
+  pageType = 'WebPage',
+} = Astro.props;
+
+const SITE_URL = 'https://farmworkindia.com';
+const SITE_NAME = 'FarmWork';
+const FULL_TITLE = `${title} | ${SITE_NAME}`;
+const CANONICAL_URL = `${SITE_URL}${canonicalPath}`;
+
+/** ── Global keyword base — appears on every page ── */
+const BASE_KEYWORDS = [
+  'FarmWork',
+  'farm work platform',
+  'India agriculture',
+  'agritech India',
+  'agricultural ecosystem India',
+  'farmers India',
+  'farm workers India',
+  '140 million farm workers',
+  'rural agriculture India',
+  'farm labour management',
+  'agricultural operating system',
+  'connected agricultural ecosystem',
+  'mechanisation as a service',
+  'agri input network',
+  'SRAM',
+  'Smart Rural Agri-ecosystem Management',
+  'digital farming India',
+  'agri platform India',
+  'farm technology India',
+  'rural operating system',
+  'agripreneur India',
+];
+
+const ALL_KEYWORDS = [...BASE_KEYWORDS, ...keywords].join(', ');
+
+/** ── JSON-LD: Organization (every page) ── */
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'FarmWork',
+  url: SITE_URL,
+  logo: `${SITE_URL}/favicon.svg`,
+  description:
+    "FarmWork is India's agricultural operating system — connecting 140M+ farm workers, farmers, machinery providers, and input partners through one digital platform.",
+  foundingDate: '2024',
+  areaServed: {
+    '@type': 'Country',
+    name: 'India',
+  },
+  knowsAbout: [
+    'Agriculture',
+    'AgriTech',
+    'Farm Labour',
+    'Mechanisation',
+    'Rural Economy',
+    'Farm Management',
+    'Agricultural Ecosystem',
+  ],
+  sameAs: [],
+};
+
+/** ── JSON-LD: WebPage (per page) ── */
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': pageType,
+  name: FULL_TITLE,
+  description,
+  url: CANONICAL_URL,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  inLanguage: 'en-IN',
+  about: {
+    '@type': 'Thing',
+    name: 'Indian Agriculture and AgriTech',
+  },
+};
+---
+
+<!-- ── Core meta ─────────────────────────────────── -->
+<title>{FULL_TITLE}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={ALL_KEYWORDS} />
+<meta name="author" content="FarmWork" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href={CANONICAL_URL} />
+
+<!-- ── Geographic targeting (India) ──────────────── -->
+<meta name="geo.region" content="IN" />
+<meta name="geo.country" content="India" />
+<meta name="language" content="English" />
+<meta http-equiv="content-language" content="en-IN" />
+
+<!-- ── Open Graph ────────────────────────────────── -->
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={FULL_TITLE} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={CANONICAL_URL} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${SITE_NAME} — ${title}`} />
+<meta property="og:locale" content="en_IN" />
+
+<!-- ── Twitter / X Card ──────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={FULL_TITLE} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- ── JSON-LD Structured Data ───────────────────── -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
