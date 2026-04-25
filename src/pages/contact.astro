@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import Layout from "../layouts/Layout.astro";
+import { getPath } from "../utils/paths";
 ---
 
 <Layout
@@ -9,192 +9,862 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
   canonicalPath="/contact"
   pageType="ContactPage"
   keywords={[
-    'contact FarmWork',
-    'agritech collaboration India',
-    'agriculture partnership inquiry',
-    'rural agri startup contact',
-    'FarmWork partner inquiry',
-    'agritech investor contact India',
-    'farm technology partnership',
-    'agriculture ambassador program',
-    'FarmWork email contact',
-    'agri ecosystem collaboration',
+    "contact FarmWork",
+    "agritech collaboration India",
+    "agriculture partnership inquiry",
+    "rural agri startup contact",
+    "FarmWork partner inquiry",
+    "agritech investor contact India",
+    "farm technology partnership",
+    "agriculture ambassador program",
+    "FarmWork email contact",
+    "agri ecosystem collaboration",
   ]}
 >
-  
-  <section style="min-height: 100vh; padding: 10rem 0 6rem 0; background: var(--surface-color); display: flex; align-items: center; justify-content: center;">
-    <div class="container">
-      
-      {/* The Master Contact Card (Dashboard Style) */}
-      <div class="fade-up" style="max-width: 1100px; margin: 0 auto; background: #ffffff; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; border: 1px solid var(--surface-border);">
-        
-        {/* Left Side: Dark Information Panel */}
-        <div class="contact-info-panel" style="flex: 1; min-width: 350px; background: var(--text-primary); color: #ffffff; padding: 5rem 4rem; position: relative; overflow: hidden;">
-          {/* Subtle Background Pattern */}
-          <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none;"></div>
-          
-          <div style="position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column;">
-            <h2 class="heading-lg" style="color: #fff; margin-bottom: 1rem;">Let's Build <br/><span style="color: var(--primary);">Together.</span></h2>
-            <p style="font-size: 1.2rem; color: #cbd5e1; margin-bottom: 4rem; line-height: 1.6;">
-              Whether you're a farmer needing machinery, an agent managing a cluster, or a partner seeking integration—drop us a line.
-            </p>
-            
-            <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-top: auto;">
-              
-              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <Mail size={24} color="var(--primary)" />
-                </div>
-                <div>
-                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Email Us</p>
-                  <p style="font-size: 1.2rem; font-weight: 500;">hello@farmwork.in</p>
-                </div>
-              </div>
+  <!-- ── LET'S BUILD TOGETHER ──────────────────────────────── -->
+  <section class="build-section">
+    <div class="container fade-up">
+      <div class="build-header">
+        <div>
+          <p class="build-overline">Early Ecosystem</p>
+          <h2 class="build-headline">Let's Build<br />Together.</h2>
+          <p class="build-intro">
+            We're looking to connect with everyone who believes Indian
+            agriculture deserves better infrastructure.
+          </p>
+        </div>
 
-              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <Phone size={24} color="var(--primary)" />
-                </div>
-                <div>
-                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">Call Us</p>
-                  <p style="font-size: 1.2rem; font-weight: 500;">+91 1800-FARM-WRK</p>
-                </div>
-              </div>
-
-              <div style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                  <MapPin size={24} color="var(--primary)" />
-                </div>
-                <div>
-                  <p style="font-size: 0.9rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem;">HQ Location</p>
-                  <p style="font-size: 1.2rem; font-weight: 500; line-height: 1.5;">Agri-Tech Campus,<br/>New Delhi, India 110001</p>
-                </div>
-              </div>
-
+        <div class="build-list">
+          <div class="build-row">
+            <span class="build-num">01</span>
+            <div>
+              <p class="build-row-title">Agritech Startups</p>
+              <p class="build-row-desc">
+                Solving for inputs, soil health, crop advisory, or farm
+                intelligence — plug into an active farmer network.
+              </p>
+            </div>
+          </div>
+          <div class="build-row">
+            <span class="build-num">02</span>
+            <div>
+              <p class="build-row-title">Mechanisation Startups</p>
+              <p class="build-row-desc">
+                Building next-gen farm equipment — reach geo-clustered demand
+                without building your own distribution layer.
+              </p>
+            </div>
+          </div>
+          <div class="build-row">
+            <span class="build-num">03</span>
+            <div>
+              <p class="build-row-title">Scaled Agri Enterprises</p>
+              <p class="build-row-desc">
+                Looking to reach deeper into rural markets — our community and
+                data intelligence takes you there.
+              </p>
+            </div>
+          </div>
+          <div class="build-row">
+            <span class="build-num">04</span>
+            <div>
+              <p class="build-row-title">Market Linkage & Output</p>
+              <p class="build-row-desc">
+                Seeking production visibility — Farmwork's structured data gives
+                you a clear view before the harvest.
+              </p>
+            </div>
+          </div>
+          <div class="build-row">
+            <span class="build-num">05</span>
+            <div>
+              <p class="build-row-title">Investors</p>
+              <p class="build-row-desc">
+                Who see the scale of this problem and the size of the
+                opportunity. Let's build this together.
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Right Side: Solid Input Form */}
-        <div style="flex: 1.5; min-width: 400px; padding: 5rem 4rem; background: #ffffff;">
-          <h3 style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 2rem;">Send a Message</h3>
-          
-          <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-            
-            <div class="grid grid-cols-2 contact-name-grid" style="gap: 1.5rem;">
-              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label for="fname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">First Name</label>
-                <input type="text" id="fname" placeholder="John" required class="solid-input" />
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label for="lname" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Last Name</label>
-                <input type="text" id="lname" placeholder="Doe" required class="solid-input" />
-              </div>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <label for="email" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Email Address / Phone</label>
-              <input type="text" id="email" placeholder="hello@example.com" required class="solid-input" />
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-              <label style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">I am a...</label>
-              <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
-                  <input type="radio" name="role" value="farmer" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Farmer
-                </label>
-                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
-                  <input type="radio" name="role" value="agent" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Worker Agent
-                </label>
-                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; cursor: pointer; color: var(--text-secondary);">
-                  <input type="radio" name="role" value="partner" style="width: 20px; height: 20px; accent-color: var(--primary);" /> Mech Partner
-                </label>
-              </div>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-              <label for="message" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Message details</label>
-              <textarea id="message" rows="4" placeholder="How can we help you?" class="solid-input" style="resize: vertical;"></textarea>
-            </div>
-
-            <button type="button" class="btn btn-primary" style="margin-top: 2rem; width: 100%; border-radius: 12px; padding: 1.5rem; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
-              Send Message <Send size={20} />
-            </button>
-
-          </form>
-        </div>
-
       </div>
     </div>
   </section>
 
+  <!-- ── CONTACT FORM ────────────────────────────────────────── -->
+  <section class="contact-section">
+    <div class="contact-root">
+      <!-- ── LEFT PANEL ───────────────────────────── -->
+      <div class="contact-left">
+        <div class="contact-left-inner">
+          <!-- Headline -->
+          <div class="contact-headline-block">
+            <p class="contact-overline">Reach out</p>
+            <h1 class="contact-h1">Start a<br />conversation.</h1>
+            <p class="contact-subtext">
+              Fill in the form and we'll get back to you within 24–48 hours.
+            </p>
+          </div>
+
+          <!-- Contact details -->
+          <div class="contact-details">
+            <a href="mailto:hello@farmworkindia.com" class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <!-- Mail icon SVG -->
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#A3E635"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect><path
+                    d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="detail-label">Email us directly</p>
+                <p class="detail-value">hello@farmworkindia.com</p>
+              </div>
+            </a>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <!-- MapPin SVG -->
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#A3E635"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                  ></path><circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <p class="detail-label">Based in</p>
+                <p class="detail-value">India</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <!-- Clock SVG -->
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#A3E635"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle><polyline
+                    points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="detail-label">Response time</p>
+                <p class="detail-value">Within 24–48 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer quote -->
+          <div class="contact-left-footer">
+            <p class="left-quote">
+              "The problem isn't effort.<br />
+              The problem is the absence<br />
+              of a shared system."
+            </p>
+            <p class="left-quote-attr">— FarmWork</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT PANEL (Form) ────────────────────── -->
+      <div class="contact-right">
+        <div class="contact-form-wrap fade-up">
+          <div class="form-header">
+            <h2 class="form-title">Tell us about yourself.</h2>
+            <p class="form-subtitle">
+              Fill in the form and we'll get back to you shortly.
+            </p>
+          </div>
+
+          <!-- Role Chips (CSS-only radio) -->
+          <div class="chip-group-wrap">
+            <p class="chip-label">I'm reaching out as a...</p>
+            <div class="chip-group">
+              <label class="chip">
+                <input type="radio" name="role" value="partner" />
+                <span>Partner</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="role" value="investor" />
+                <span>Investor</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="role" value="startup" />
+                <span>Agritech Startup</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="role" value="ambassador" />
+                <span>Ambassador</span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="role" value="other" />
+                <span>Other</span>
+              </label>
+            </div>
+          </div>
+
+          <form class="contact-form" novalidate>
+            <!-- Name row -->
+            <div class="form-row-split">
+              <div class="form-field">
+                <label for="fname">First Name <span class="req">*</span></label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Ravi"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="lname">Last Name <span class="req">*</span></label>
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  placeholder="Kumar"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email">Email Address <span class="req">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="ravi@company.com"
+                required
+              />
+            </div>
+
+            <!-- Organisation -->
+            <div class="form-field">
+              <label for="org">Organisation / Company</label>
+              <input
+                type="text"
+                id="org"
+                name="org"
+                placeholder="Your organisation name"
+              />
+            </div>
+
+            <!-- Message -->
+            <div class="form-field">
+              <label for="message">Message <span class="req">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your interest, what you're building, or how you'd like to collaborate..."
+                required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="form-submit">
+              Send Message
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </form>
+
+          <p class="form-note">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="display:inline;vertical-align:middle;margin-right:0.35rem"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle
+                cx="9"
+                cy="7"
+                r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path
+                d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            We read every message personally. No auto-responses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
-<style>
-  /* Solid Input Styling replacing the floating trick */
-  .solid-input {
-    appearance: none;
-    box-sizing: border-box;
-    padding: 1.25rem 1.5rem;
-    border-radius: 16px;
-    border: 2px solid transparent;
-    background: #f8fafc;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-    font-family: inherit;
+<style is:global>
+  /* ── Build Together section ──────────────────────────── */
+  .build-section {
+    background: var(--surface-color);
+    padding: 5rem 0 4.5rem;
   }
-  .solid-input::placeholder {
+
+  .build-header {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    gap: 5rem;
+    align-items: flex-start;
+  }
+
+  .build-overline {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .build-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .build-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 320px;
+  }
+
+  .build-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .build-row {
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+    padding: 1.4rem 0.5rem;
+    border-bottom: 1px solid var(--surface-border);
+    transition:
+      background 0.18s ease,
+      padding-left 0.18s ease;
+    border-radius: 8px;
+  }
+
+  .build-row:hover {
+    background: rgba(21, 128, 61, 0.04);
+    padding-left: 1rem;
+  }
+
+  .build-num {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--primary);
+    opacity: 0.5;
+    letter-spacing: 0.08em;
+    padding-top: 0.25rem;
+    flex-shrink: 0;
+    width: 1.75rem;
+  }
+
+  .build-row-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+
+  .build-row-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Section wrapper (gets global navbar clearance rule) ── */
+  .contact-section {
+    background: var(--bg-color);
+  }
+
+  /* ── Root: side-by-side layout ── */
+  .contact-root {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ═══════════════════════════════════════════
+     LEFT DARK PANEL
+  ═══════════════════════════════════════════ */
+  .contact-left {
+    width: 42%;
+    background: #0c1a0e;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  /* Radial glow */
+  .contact-left::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(
+      circle,
+      rgba(163, 230, 53, 0.06) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .contact-left-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+  }
+
+  .contact-headline-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0 2rem;
+  }
+
+  .contact-overline {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a3e635;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+  }
+
+  .contact-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-subtext {
+    font-size: 0.975rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.75;
+    max-width: 320px;
+  }
+
+  /* Contact details */
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .contact-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .contact-detail-row:hover {
+    opacity: 0.7;
+  }
+
+  .contact-detail-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(163, 230, 53, 0.1);
+    border: 1px solid rgba(163, 230, 53, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .detail-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .detail-value {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+  }
+
+  /* Left footer */
+  .contact-left-footer {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .left-quote {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.28);
+    font-style: italic;
+    margin: 0 0 0.4rem 0;
+  }
+
+  .left-quote-attr {
+    font-size: 0.7rem;
+    color: #a3e635;
+    opacity: 0.65;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════
+     RIGHT FORM PANEL
+  ═══════════════════════════════════════════ */
+  .contact-right {
+    flex: 1;
+    background: var(--bg-color);
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .contact-form-wrap {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+  }
+
+  .form-header {
+    margin-bottom: 2rem;
+  }
+
+  .form-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 900;
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ── Chip selector ── */
+  .chip-group-wrap {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--surface-border);
+  }
+
+  .chip-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .chip {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .chip input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  .chip span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--surface-border);
+    background: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition:
+      border-color 0.18s ease,
+      color 0.18s ease,
+      background 0.18s ease;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .chip:hover span {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .chip input[type="radio"]:checked ~ span,
+  .chip input[type="radio"]:checked + span {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  /* ── Form fields ── */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .req {
+    color: var(--primary);
+  }
+
+  .form-field input,
+  .form-field textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 0.875rem 1.1rem;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    background: #ffffff;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    outline: none;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
     color: #94a3b8;
     font-weight: 400;
   }
-  .solid-input:hover {
-    background: #f1f5f9;
-  }
-  .solid-input:focus {
-    outline: none;
+
+  .form-field input:focus,
+  .form-field textarea:focus {
     border-color: var(--primary);
-    background: #ffffff;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12);
   }
 
-  @media (max-width: 768px) {
-    .contact-info-panel {
-      min-width: 100% !important;
-      padding: 2rem 1.25rem !important;
-      border-radius: 0 !important;
+  .form-field textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+  }
+
+  /* ── Submit button ── */
+  .form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease,
+      box-shadow 0.2s ease;
+    width: 100%;
+  }
+
+  .form-submit:hover {
+    background: #166534;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(21, 128, 61, 0.28);
+  }
+
+  .form-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .form-note {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE  ≤900px — stack vertically
+  ═══════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    .build-section {
+      padding: 3.5rem 0 3rem;
     }
-    [style*="min-width: 400px"] {
-      min-width: 100% !important;
-      padding: 2rem 1.25rem !important;
+    .build-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
-    [style*="border-radius: 40px"] {
-      border-radius: 16px !important;
+    .build-intro {
+      max-width: 100%;
     }
-    .contact-name-grid {
-      grid-template-columns: 1fr !important;
-      gap: 0.875rem !important;
+    .build-headline {
+      font-size: clamp(2rem, 7vw, 2.75rem);
     }
-    .solid-input {
-      padding: 1rem 1.25rem;
-      font-size: 1rem;
-      border-radius: 12px;
+
+    .contact-root {
+      flex-direction: column;
     }
-    [style*="gap: 2.5rem"] {
-      gap: 1.5rem !important;
+
+    .contact-left {
+      width: 100%;
+    }
+
+    .contact-left-inner {
+      min-height: unset;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .contact-headline-block {
+      flex: unset;
+      padding: 0 0 1.5rem;
+    }
+
+    .contact-h1 {
+      font-size: clamp(2.25rem, 8vw, 3.25rem);
+    }
+
+    .contact-subtext {
+      max-width: 100%;
+    }
+
+    .contact-details {
+      gap: 1.25rem;
+      padding: 1.5rem 0;
+    }
+
+    .contact-left-footer {
+      padding-top: 1.5rem;
+    }
+
+    .contact-right {
+      min-height: unset;
+    }
+
+    .contact-form-wrap {
+      padding: 2.5rem 1.5rem 3rem;
     }
   }
 
   @media (max-width: 480px) {
-    .contact-info-panel {
-      padding: 1.75rem 1rem !important;
+    .form-row-split {
+      grid-template-columns: 1fr;
     }
-    [style*="min-width: 400px"] {
-      padding: 1.75rem 1rem !important;
+
+    .chip span {
+      font-size: 0.82rem;
+      padding: 0.4rem 0.875rem;
     }
-    .solid-input {
-      padding: 0.875rem 1rem;
+
+    .form-field input,
+    .form-field textarea {
+      padding: 0.75rem 1rem;
       font-size: 0.95rem;
     }
   }

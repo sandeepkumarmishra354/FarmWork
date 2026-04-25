@@ -57,18 +57,44 @@ import { getPath } from '../utils/paths';
         140 million workers. Millions of farmers. Machinery, inputs, and markets — all moving in isolation, connected by nothing but word of mouth and guesswork.
       </p>
 
-      <div class="core-problems">
-        {[
-          "Workers go unseen, unpaid on record, and unprotected.",
-          "Farmers lose harvests to late labour, unaffordable machines, and zero market foresight.",
-          "Mechanisation partners can't scale without organised, clustered demand.",
-          "Input sellers and buyers operate blind, without production intelligence."
-        ].map((line) => (
-          <div class="core-problem-item">
-            <span class="core-dash">—</span>
-            <p>{line}</p>
+      <div class="problem-grid">
+
+        <div class="problem-card">
+          <p class="problem-num">01</p>
+          <div class="problem-icon-box">
+            <Users size={20} color="#A3E635" />
           </div>
-        ))}
+          <p class="problem-who">Farm Workers</p>
+          <p class="problem-text">Workers go unseen, unpaid on record, and unprotected.</p>
+        </div>
+
+        <div class="problem-card">
+          <p class="problem-num">02</p>
+          <div class="problem-icon-box">
+            <LineChart size={20} color="#A3E635" />
+          </div>
+          <p class="problem-who">Farmers</p>
+          <p class="problem-text">Farmers lose harvests to late labour, unaffordable machines, and zero market foresight.</p>
+        </div>
+
+        <div class="problem-card">
+          <p class="problem-num">03</p>
+          <div class="problem-icon-box">
+            <Cog size={20} color="#A3E635" />
+          </div>
+          <p class="problem-who">Mechanisation Partners</p>
+          <p class="problem-text">Mechanisation partners can't scale without organised, clustered demand.</p>
+        </div>
+
+        <div class="problem-card">
+          <p class="problem-num">04</p>
+          <div class="problem-icon-box">
+            <Store size={20} color="#A3E635" />
+          </div>
+          <p class="problem-who">Input Ecosystem</p>
+          <p class="problem-text">Input sellers and buyers operate blind, without production intelligence.</p>
+        </div>
+
       </div>
 
       <div class="core-closing">
@@ -123,7 +149,7 @@ import { getPath } from '../utils/paths';
         <div class="bento-item identical-card">
           <p class="card-watermark">05</p>
           <div class="card-icon-box"><Wallet size={24} color="var(--primary)" /></div>
-          <h3>Financial Identity for Workers</h3>
+          <h3>Replace this card's content Community-  Financial Identity for Workers</h3>
           <p class="desc">Work history, payment records, and income proof for every farm worker — enabling access to credit, insurance, and formal financial services.</p>
         </div>
         <div class="bento-item identical-card">
@@ -218,7 +244,7 @@ import { getPath } from '../utils/paths';
     .card-icon-box { margin-bottom: 1.25rem; }
     .core-headline { font-size: clamp(1.9rem, 7vw, 2.75rem) !important; }
     .core-context { font-size: 1rem !important; margin-bottom: 2rem !important; }
-    .core-problems { padding-left: 1.25rem !important; margin-bottom: 2.5rem !important; }
+    .problem-grid { grid-template-columns: 1fr !important; gap: 1rem !important; margin-bottom: 2.5rem !important; }
     .core-closing { grid-template-columns: 1fr !important; gap: 1.25rem !important; padding-top: 2rem !important; }
     .core-closing-line, .core-closing-answer { font-size: 1.2rem !important; }
   }
@@ -227,7 +253,90 @@ import { getPath } from '../utils/paths';
     .identical-card { padding: 1.25rem; }
     .identical-card h3 { font-size: 1.15rem; }
     .card-icon-box { width: 40px; height: 40px; margin-bottom: 0.875rem; }
-    .core-problem-item p { font-size: 0.95rem !important; }
+    .problem-card { padding: 1.25rem !important; }
+    .problem-text { font-size: 0.9rem !important; }
+  }
+
+  /* ── Problem Cards Grid ────────────────────────────────── */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
+    max-width: 860px;
+  }
+
+  .problem-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+  }
+
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #A3E635;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(163, 230, 53, 0.25);
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+  }
+
+  .problem-card:hover::before { opacity: 1; }
+
+  .problem-num {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(163, 230, 53, 0.06);
+    pointer-events: none;
+    margin: 0;
+    letter-spacing: -0.05em;
+  }
+
+  .problem-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(163, 230, 53, 0.1);
+    border: 1px solid rgba(163, 230, 53, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .problem-who {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A3E635;
+    opacity: 0.85;
+    margin-bottom: 0.6rem;
+  }
+
+  .problem-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    margin: 0;
   }
 
   /* ── Core Issue Section ────────────────────────────────── */
