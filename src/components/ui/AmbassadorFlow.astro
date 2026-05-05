@@ -1,0 +1,186 @@
+---
+/**
+ * AmbassadorFlow — A horizontal stepper/flowchart showing the Ambassador journey.
+ * Replaces verbose 4-card grid with a clean visual timeline.
+ * Pure CSS animations.
+ */
+---
+
+<div class="amb-flow">
+  <div class="amb-track">
+    <!-- Step 1 -->
+    <div class="amb-step amb-step-1">
+      <div class="amb-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
+          <line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" />
+        </svg>
+      </div>
+      <p class="amb-title">Join</p>
+      <p class="amb-desc">Sign up as a Village Ambassador</p>
+    </div>
+
+    <div class="amb-connector amb-conn-1"><div class="amb-conn-line"></div></div>
+
+    <!-- Step 2 -->
+    <div class="amb-step amb-step-2">
+      <div class="amb-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+      <p class="amb-title">Build</p>
+      <p class="amb-desc">Onboard farmers & retailers locally</p>
+    </div>
+
+    <div class="amb-connector amb-conn-2"><div class="amb-conn-line"></div></div>
+
+    <!-- Step 3 -->
+    <div class="amb-step amb-step-3">
+      <div class="amb-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+      </div>
+      <p class="amb-title">Earn</p>
+      <p class="amb-desc">Revenue from community activity</p>
+    </div>
+
+    <div class="amb-connector amb-conn-3"><div class="amb-conn-line"></div></div>
+
+    <!-- Step 4 -->
+    <div class="amb-step amb-step-4">
+      <div class="amb-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg>
+      </div>
+      <p class="amb-title">Scale</p>
+      <p class="amb-desc">Grow impact across your district</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .amb-flow {
+    padding: 2.5rem 0;
+    overflow-x: auto;
+  }
+
+  .amb-track {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    min-width: 600px;
+  }
+
+  /* ── Steps ── */
+  .amb-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    width: 140px;
+    opacity: 0;
+    animation: stepIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .amb-step-1 { animation-delay: 0.2s; }
+  .amb-step-2 { animation-delay: 0.6s; }
+  .amb-step-3 { animation-delay: 1.0s; }
+  .amb-step-4 { animation-delay: 1.4s; }
+
+  @keyframes stepIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .amb-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(21, 128, 61, 0.08);
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .amb-step:hover .amb-circle {
+    transform: scale(1.1);
+    background: rgba(21, 128, 61, 0.15);
+  }
+
+  .amb-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .amb-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 130px;
+  }
+
+  /* ── Connectors ── */
+  .amb-connector {
+    flex-shrink: 0;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    padding-top: 30px; /* align with circle center */
+  }
+
+  .amb-conn-line {
+    width: 100%;
+    height: 2px;
+    background: var(--surface-border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .amb-conn-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: connDraw 0.4s ease forwards;
+  }
+
+  .amb-conn-1 .amb-conn-line::after { animation-delay: 0.45s; }
+  .amb-conn-2 .amb-conn-line::after { animation-delay: 0.85s; }
+  .amb-conn-3 .amb-conn-line::after { animation-delay: 1.25s; }
+
+  @keyframes connDraw {
+    to { transform: scaleX(1); }
+  }
+
+  @media (max-width: 640px) {
+    .amb-track {
+      min-width: unset;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .amb-connector {
+      display: none;
+    }
+    .amb-step {
+      width: calc(50% - 1rem);
+    }
+  }
+</style>

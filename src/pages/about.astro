@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Users, Cog, Store, FileText, Wallet, LineChart, Handshake } from 'lucide-react';
+import { Users, Cog, Store, FileText, LineChart, Handshake } from 'lucide-react';
 import { getPath } from '../utils/paths';
+import EcosystemDiagram from '../components/ui/EcosystemDiagram.astro';
 ---
 
 <Layout
@@ -36,12 +37,12 @@ import { getPath } from '../utils/paths';
         The digital infrastructure layer for farm work.
       </h1>
       <p style="font-size: 1.25rem; color: var(--text-secondary); line-height: 1.6; max-width: 650px;">
-        One platform that connects every stakeholder in the agricultural ecosystem — and records every interaction as structured, valuable data.
+        One platform connecting every agricultural stakeholder — recording every interaction as structured, valuable data.
       </p>
     </div>
   </section>
 
-  {/* THE CORE ISSUE */}
+  {/* THE CORE ISSUE — Animated Ecosystem Diagram */}
   <section style="background: #0c1a0e; color: #ffffff; padding: 5rem 0;">
     <div class="container fade-up">
 
@@ -53,54 +54,12 @@ import { getPath } from '../utils/paths';
         Agriculture's Biggest Sector<br/>Has No Operating System.
       </h2>
 
-      <p class="core-context">
-        140 million workers. Millions of farmers. Machinery, inputs, and markets — all moving in isolation, connected by nothing but word of mouth and guesswork.
-      </p>
-
-      <div class="problem-grid">
-
-        <div class="problem-card">
-          <p class="problem-num">01</p>
-          <div class="problem-icon-box">
-            <Users size={20} color="#A3E635" />
-          </div>
-          <p class="problem-who">Farm Workers</p>
-          <p class="problem-text">Workers go unseen, unpaid on record, and unprotected.</p>
-        </div>
-
-        <div class="problem-card">
-          <p class="problem-num">02</p>
-          <div class="problem-icon-box">
-            <LineChart size={20} color="#A3E635" />
-          </div>
-          <p class="problem-who">Farmers</p>
-          <p class="problem-text">Farmers lose harvests to late labour, unaffordable machines, and zero market foresight.</p>
-        </div>
-
-        <div class="problem-card">
-          <p class="problem-num">03</p>
-          <div class="problem-icon-box">
-            <Cog size={20} color="#A3E635" />
-          </div>
-          <p class="problem-who">Mechanisation Partners</p>
-          <p class="problem-text">Mechanisation partners can't scale without organised, clustered demand.</p>
-        </div>
-
-        <div class="problem-card">
-          <p class="problem-num">04</p>
-          <div class="problem-icon-box">
-            <Store size={20} color="#A3E635" />
-          </div>
-          <p class="problem-who">Input Ecosystem</p>
-          <p class="problem-text">Input sellers and buyers operate blind, without production intelligence.</p>
-        </div>
-
-      </div>
+      <EcosystemDiagram />
 
       <div class="core-closing">
         <p class="core-closing-line">
           The problem isn't effort.<br/>
-          <span style="color: rgba(255,255,255,0.4);">Everyone in this ecosystem is working hard.</span>
+          <span style="color: rgba(255,255,255,0.4);">Everyone is working hard.</span>
         </p>
         <p class="core-closing-answer">
           The problem is the absence of a shared system that connects them.
@@ -110,7 +69,7 @@ import { getPath } from '../utils/paths';
     </div>
   </section>
 
-  {/* WHAT WE BUILD — 6-card grid */}
+  {/* WHAT WE BUILD — 6-card grid (trimmed text) */}
   <section style="padding: 5rem 0; background: var(--surface-color);">
     <div class="container fade-up">
 
@@ -126,37 +85,37 @@ import { getPath } from '../utils/paths';
           <p class="card-watermark">01</p>
           <div class="card-icon-box"><Users size={24} color="var(--primary)" /></div>
           <h3>Real-Time Labour Access</h3>
-          <p class="desc">Farmers connect with verified worker agents for specific farm tasks — from land preparation to post-harvest — right when they need them.</p>
+          <p class="desc">Connect with verified worker agents for specific farm tasks — right when you need them.</p>
         </div>
         <div class="bento-item identical-card">
           <p class="card-watermark">02</p>
           <div class="card-icon-box"><Cog size={24} color="var(--primary)" /></div>
           <h3>Mechanisation as a Service</h3>
-          <p class="desc">Crop and geography-based clusters connect farmers with machinery providers. No ownership, no capital risk — access when needed.</p>
+          <p class="desc">Access tractors, harvesters, and equipment through crop-based clusters. No ownership needed.</p>
         </div>
         <div class="bento-item identical-card">
           <p class="card-watermark">03</p>
           <div class="card-icon-box"><Store size={24} color="var(--primary)" /></div>
           <h3>Input Partner Network</h3>
-          <p class="desc">Farmers check product availability from local retailers digitally. Retailers manage sales, track balances, and reach more farmers.</p>
+          <p class="desc">Check product availability from local retailers digitally. Retailers track sales and reach more farmers.</p>
         </div>
         <div class="bento-item identical-card">
           <p class="card-watermark">04</p>
           <div class="card-icon-box"><FileText size={24} color="var(--primary)" /></div>
           <h3>Digital Record Keeping</h3>
-          <p class="desc">Every farm activity — labour deployed, inputs purchased, machinery used — is recorded. Farmers get cost-of-production intelligence automatically.</p>
+          <p class="desc">Every farm activity recorded automatically — giving farmers cost-of-production intelligence.</p>
         </div>
         <div class="bento-item identical-card">
           <p class="card-watermark">05</p>
           <div class="card-icon-box"><Handshake size={24} color="var(--primary)" /></div>
           <h3>The Unified Agri-Community</h3>
-          <p class="desc">A dynamic social layer where farmers, agents, and input providers build micro-communities. By crowdsourcing information on crop health, weather impacts, and resource availability, the network turns individual observations into actionable data that benefits every participant.</p>
+          <p class="desc">Farmers, agents, and providers crowdsource crop health, weather, and resource data together.</p>
         </div>
         <div class="bento-item identical-card">
           <p class="card-watermark">06</p>
           <div class="card-icon-box"><LineChart size={24} color="var(--primary)" /></div>
           <h3>Market Linkage & Output Intelligence</h3>
-          <p class="desc">Farmers connect with buyers early. Output players gain forward visibility on production volumes, quality, and geography.</p>
+          <p class="desc">Farmers connect with buyers early. Output players gain forward visibility on production.</p>
         </div>
       </div>
 
@@ -210,6 +169,12 @@ import { getPath } from '../utils/paths';
     align-items: center;
     justify-content: center;
     border: 1px solid var(--surface-border);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .identical-card:hover .card-icon-box {
+    transform: scale(1.08);
+    background: rgba(21, 128, 61, 0.06);
   }
 
   .identical-card h3 {
@@ -243,8 +208,6 @@ import { getPath } from '../utils/paths';
     .identical-card { padding: 1.5rem; }
     .card-icon-box { margin-bottom: 1.25rem; }
     .core-headline { font-size: clamp(1.9rem, 7vw, 2.75rem) !important; }
-    .core-context { font-size: 1rem !important; margin-bottom: 2rem !important; }
-    .problem-grid { grid-template-columns: 1fr !important; gap: 1rem !important; margin-bottom: 2.5rem !important; }
     .core-closing { grid-template-columns: 1fr !important; gap: 1.25rem !important; padding-top: 2rem !important; }
     .core-closing-line, .core-closing-answer { font-size: 1.2rem !important; }
   }
@@ -253,90 +216,6 @@ import { getPath } from '../utils/paths';
     .identical-card { padding: 1.25rem; }
     .identical-card h3 { font-size: 1.15rem; }
     .card-icon-box { width: 40px; height: 40px; margin-bottom: 0.875rem; }
-    .problem-card { padding: 1.25rem !important; }
-    .problem-text { font-size: 0.9rem !important; }
-  }
-
-  /* ── Problem Cards Grid ────────────────────────────────── */
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 3.5rem;
-    max-width: 860px;
-  }
-
-  .problem-card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 2rem;
-    overflow: hidden;
-    transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
-  }
-
-  .problem-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #A3E635;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-  }
-
-  .problem-card:hover {
-    border-color: rgba(163, 230, 53, 0.25);
-    background: rgba(255, 255, 255, 0.07);
-    transform: translateY(-3px);
-  }
-
-  .problem-card:hover::before { opacity: 1; }
-
-  .problem-num {
-    position: absolute;
-    top: 1.25rem;
-    right: 1.5rem;
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 1;
-    color: rgba(163, 230, 53, 0.06);
-    pointer-events: none;
-    margin: 0;
-    letter-spacing: -0.05em;
-  }
-
-  .problem-icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    background: rgba(163, 230, 53, 0.1);
-    border: 1px solid rgba(163, 230, 53, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .problem-who {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #A3E635;
-    opacity: 0.85;
-    margin-bottom: 0.6rem;
-  }
-
-  .problem-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.72);
-    line-height: 1.65;
-    margin: 0;
   }
 
   /* ── Core Issue Section ────────────────────────────────── */
@@ -347,33 +226,8 @@ import { getPath } from '../utils/paths';
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: #ffffff;
-    margin-bottom: 2rem;
-    max-width: 820px;
-  }
-
-  .core-context {
-    font-size: 1.25rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.7;
-    max-width: 680px;
     margin-bottom: 3rem;
-  }
-
-  .core-problems {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-    max-width: 720px;
-    border-left: 2px solid rgba(163, 230, 53, 0.35);
-    padding-left: 2rem;
-  }
-
-  .core-problem-item p {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.6;
-    margin: 0;
+    max-width: 820px;
   }
 
   .core-closing {
@@ -383,6 +237,7 @@ import { getPath } from '../utils/paths';
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     max-width: 900px;
+    margin-top: 3rem;
   }
 
   .core-closing-line {

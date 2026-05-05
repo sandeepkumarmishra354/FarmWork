@@ -10,14 +10,12 @@ const tabsData = [
     icon: <Sprout size={20} />,
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'Get access to available agricultural workers for different farm activities, right when you need them. Find and book right mechanisation services like tractors, harvesters, sprayers, and other equipment based on your farm requirements.',
+    description: 'Find workers, book machinery, and check input availability — all from one platform.',
     image: getPath('/media/farmers.jpeg'),
     bullets: [
-      'Check product availability from local retailers without visiting multiple shops.',
-      'Get visibility of worker, inputs, and machinery to make timely and informed decisions.',
-      'Rate every service you use and get access to more skilled, trusted partners over time.',
-      'Receive updates from retailers and service providers about availability, pricing, and offers.',
-      'From inputs to worker to machinery—view all your farm costs in one place recorded by your engaged partners.'
+      'Access verified workers and machinery when you need them.',
+      'Check product availability from local retailers digitally.',
+      'View all farm costs in one place — inputs, labour, machinery.'
     ]
   },
   {
@@ -26,15 +24,12 @@ const tabsData = [
     icon: <Briefcase size={20} />,
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'Get access to nearby farm work based on demand—reduce idle time and uncertainty.',
+    description: 'Get nearby farm work based on demand — reduce idle time and build a digital track record.',
     image: getPath('/media/img-7.jpeg'),
     bullets: [
-      'Organise and manage workers, assign jobs, and track work easily.',
-      'Connect with more farmers and increase chances of regular employment.',
-      'Maintain digital records of jobs completed and payments received.',
-      'Monitor outstanding balances and send reminders easily.',
-      'Creat a track record of your work and reliability on the platform.',
-      'Stay connected with farmers for work updates, availability, and coordination.'
+      'Manage workers, assign jobs, and track completion easily.',
+      'Maintain digital records of jobs and payments received.',
+      'Build a verified reputation for consistent work opportunities.'
     ]
   },
   {
@@ -43,13 +38,12 @@ const tabsData = [
     icon: <Handshake size={20} />,
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'Digitise the store and manage your business efficiently.',
+    description: 'Digitise your store — record sales, track balances, and reach more farmers.',
     image: getPath('/media/input-partner.png'),
     bullets: [
-      'Record all sales digitally—no more manual maintainance in multiple registers.',
-      'Monitor outstanding balances and send reminders easily.',
-      'Share product updates, offers, and notifications directly.',
-      'Get visibility and connect with a wider network of farmers through the platform.'
+      'Record all sales digitally — no more manual registers.',
+      'Monitor balances and send payment reminders easily.',
+      'Connect with a wider farmer network through the platform.'
     ]
   },
   {
@@ -58,14 +52,12 @@ const tabsData = [
     icon: <Forklift size={20} />,
     color: 'var(--primary)',
     bg: 'var(--bg-color)',
-    description: 'List your machines, reach more farmers, and manage bookings with ease.',
+    description: 'List machines, reach more farmers, and manage bookings — all in one place.',
     image: getPath('/media/mechanization.jpeg'),
     bullets: [
-      'Get visibility and connect with a wider network of farmers who need machinery services.',
-      'Track all service requests and bookings in one place.',
-      'Avoid missed calls and manual coordination.',
-      'Maintain digital records of jobs completed and payments received.',
-      'Share availability, pricing, and updates directly with farmers.'
+      'Connect with geo-clustered farmers who need machinery.',
+      'Track service requests and bookings in one dashboard.',
+      'Share availability and pricing updates directly.'
     ]
   },
 ];
