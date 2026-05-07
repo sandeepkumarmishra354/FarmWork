@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://farmworkindia.com/sitemap-index.xml
+
+# Crawl-delay (optional, be kind to server)
+Crawl-delay: 1
+
+# Disallow dev/build artifacts
+Disallow: /_astro/
+Disallow: /404
