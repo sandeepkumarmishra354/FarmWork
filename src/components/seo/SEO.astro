@@ -1,24 +1,17 @@
 ---
 /**
- * SEO.astro — Reusable SEO meta component for FarmWork
- * Drop this into any page's <head> via Layout.astro props.
+ * SEO.astro — Comprehensive SEO meta component for FarmWork
+ * Injects: title, description, keywords, OG, Twitter, JSON-LD (Organization, WebSite, WebPage, BreadcrumbList)
  */
 
 export interface Props {
-  /** Full page title (without the "| FarmWork" suffix — Layout adds that) */
   title: string;
-  /** Page-specific meta description (150–160 chars ideal) */
   description: string;
-  /** Extra page-specific keywords (merged with global base keywords) */
   keywords?: string[];
-  /** Canonical page path, e.g. "/about" or "/" */
   canonicalPath?: string;
-  /** Open Graph image URL (absolute). Defaults to /og-image.png */
   ogImage?: string;
-  /** Open Graph type. Defaults to "website" */
   ogType?: 'website' | 'article';
-  /** Schema.org page type for JSON-LD */
-  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'ItemPage';
 }
 
 const {
@@ -38,58 +31,86 @@ const CANONICAL_URL = `${SITE_URL}${canonicalPath}`;
 
 /** ── Global keyword base — appears on every page ── */
 const BASE_KEYWORDS = [
-  'FarmWork',
-  'farm work platform',
-  'India agriculture',
-  'agritech India',
-  'agricultural ecosystem India',
-  'farmers India',
-  'farm workers India',
-  '140 million farm workers',
-  'rural agriculture India',
-  'farm labour management',
-  'agricultural operating system',
-  'connected agricultural ecosystem',
-  'mechanisation as a service',
-  'agri input network',
-  'SRAM',
-  'Smart Rural Agri-ecosystem Management',
-  'digital farming India',
-  'agri platform India',
-  'farm technology India',
-  'rural operating system',
-  'agripreneur India',
+  // Brand
+  'FarmWork', 'FarmWork India', 'farmworkindia.com', 'SRAM', 'Smart Rural Agri-ecosystem Management',
+  // Core platform
+  'agricultural operating system', 'farm work platform', 'farm management platform India',
+  'connected agricultural ecosystem', 'digital farming India', 'agri platform India',
+  // Stakeholders
+  'farmers India', 'farm workers India', '140 million farm workers',
+  'farm labour management', 'farm worker app India',
+  'mechanisation as a service', 'farm machinery booking India', 'tractor booking app',
+  'agri input network', 'agri input marketplace India',
+  // Industry
+  'agritech India', 'agritech startup India', 'agriculture technology India',
+  'rural agriculture India', 'rural economy digitisation', 'rural workforce India',
+  'India agriculture problem', 'agriculture supply chain India',
+  // Regional / Hindi
+  'कृषि मजदूर', 'किसान ऐप', 'खेती', 'कृषि तकनीक', 'ट्रैक्टर बुकिंग',
+  // Long-tail
+  'digital record keeping farmers India', 'farm cost of production tracker',
+  'agricultural data platform India', 'farm labour app download',
+  'agripreneur India', 'village ambassador program agriculture',
 ];
 
-const ALL_KEYWORDS = [...BASE_KEYWORDS, ...keywords].join(', ');
+const ALL_KEYWORDS = [...new Set([...BASE_KEYWORDS, ...keywords])].join(', ');
 
-/** ── JSON-LD: Organization (every page) ── */
+/** ── Breadcrumb labels ── */
+const breadcrumbLabels: Record<string, string> = {
+  '/': 'Home',
+  '/about': 'Vision',
+  '/product': 'Product',
+  '/features': 'Features',
+  '/partner-with-us': 'Partner With Us',
+  '/contact': 'Contact',
+};
+
+/** ── JSON-LD: Organization ── */
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'FarmWork',
+  alternateName: 'FarmWork India',
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.svg`,
-  description:
-    "FarmWork is India's agricultural operating system — connecting 140M+ farm workers, farmers, machinery providers, and input partners through one digital platform.",
+  description: "FarmWork is India's agricultural operating system — connecting 140M+ farm workers, farmers, machinery providers, and input partners through one digital platform.",
   foundingDate: '2024',
   areaServed: {
     '@type': 'Country',
     name: 'India',
   },
   knowsAbout: [
-    'Agriculture',
-    'AgriTech',
-    'Farm Labour',
-    'Mechanisation',
-    'Rural Economy',
-    'Farm Management',
-    'Agricultural Ecosystem',
+    'Agriculture', 'AgriTech', 'Farm Labour', 'Mechanisation',
+    'Rural Economy', 'Farm Management', 'Agricultural Ecosystem',
+    'Crop Advisory', 'Market Linkage', 'Financial Inclusion',
   ],
   sameAs: [],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@farmworkindia.com',
+    contactType: 'customer service',
+    areaServed: 'IN',
+    availableLanguage: ['English', 'Hindi'],
+  },
 };
 
-/** ── JSON-LD: WebPage (per page) ── */
+/** ── JSON-LD: WebSite with SearchAction ── */
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  alternateName: 'FarmWork India',
+  url: SITE_URL,
+  description: "India's agricultural operating system connecting farmers, workers, machinery, and inputs.",
+  inLanguage: 'en-IN',
+  publisher: {
+    '@type': 'Organization',
+    name: 'FarmWork',
+    url: SITE_URL,
+  },
+};
+
+/** ── JSON-LD: WebPage ── */
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': pageType,
@@ -106,7 +127,48 @@ const webPageSchema = {
     '@type': 'Thing',
     name: 'Indian Agriculture and AgriTech',
   },
+  dateModified: new Date().toISOString(),
 };
+
+/** ── JSON-LD: BreadcrumbList ── */
+const buildBreadcrumbs = () => {
+  const items = [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL }];
+  if (canonicalPath && canonicalPath !== '/') {
+    const label = breadcrumbLabels[canonicalPath] || canonicalPath.replace(/^\//, '').replace(/-/g, ' ');
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: label,
+      item: CANONICAL_URL,
+    });
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items,
+  };
+};
+
+/** ── JSON-LD: MobileApplication (Product page only) ── */
+const mobileAppSchema = canonicalPath === '/product' ? {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: 'FarmWork',
+  operatingSystem: 'Android, iOS',
+  applicationCategory: 'BusinessApplication',
+  description: "India's agricultural operating system — connecting farmers, workers, machinery providers, and input partners.",
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/PreOrder',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'FarmWork',
+    url: SITE_URL,
+  },
+} : null;
 ---
 
 <!-- ── Core meta ─────────────────────────────────── -->
@@ -117,11 +179,23 @@ const webPageSchema = {
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <link rel="canonical" href={CANONICAL_URL} />
 
+<!-- ── Preconnect for performance ── -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 <!-- ── Geographic targeting (India) ──────────────── -->
 <meta name="geo.region" content="IN" />
+<meta name="geo.placename" content="India" />
 <meta name="geo.country" content="India" />
 <meta name="language" content="English" />
 <meta http-equiv="content-language" content="en-IN" />
+
+<!-- ── Mobile app meta ── -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="FarmWork" />
+<meta name="application-name" content="FarmWork" />
+<meta name="theme-color" content="#15803d" />
 
 <!-- ── Open Graph ────────────────────────────────── -->
 <meta property="og:type" content={ogType} />
@@ -143,4 +217,9 @@ const webPageSchema = {
 
 <!-- ── JSON-LD Structured Data ───────────────────── -->
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(buildBreadcrumbs())} />
+{mobileAppSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(mobileAppSchema)} />
+)}

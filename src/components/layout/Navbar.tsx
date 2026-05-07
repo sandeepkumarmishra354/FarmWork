@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, Eye, Handshake, Mail, ArrowRight } from 'lucide-react';
+import { Menu, X, Home, Eye, Handshake, Mail, ArrowRight, Smartphone } from 'lucide-react';
 import { getPath } from '../../utils/paths';
 
 const navItems = [
   { href: '/',                label: 'Home',          icon: Home,        desc: 'Back to start'          },
   { href: '/about',           label: 'Vision',        icon: Eye,         desc: 'What we\'re building'  },
+  { href: '/product',         label: 'Product',       icon: Smartphone,  desc: 'Mobile app coming soon' },
   { href: '/partner-with-us', label: 'Partner With Us', icon: Handshake, desc: 'Join the ecosystem'     },
   { href: '/contact',         label: 'Contact',       icon: Mail,        desc: 'Get in touch'           },
 ];
@@ -67,6 +68,7 @@ export default function Navbar() {
           {/* Desktop Nav Links */}
           <nav className="desktop-nav" style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
             <a href={getPath('/about')} className="nav-link">VISION</a>
+            <a href={getPath('/product')} className="nav-link">PRODUCT</a>
             <a href={getPath('/partner-with-us')} className="nav-link">PARTNER WITH US</a>
             <a href={getPath('/contact')} className="btn btn-primary" style={{ padding: '0.75rem 1.75rem' }}>CONTACT</a>
           </nav>

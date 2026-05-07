@@ -1,0 +1,426 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPath } from '../utils/paths';
+---
+
+<Layout
+  title="FarmWork App | Coming Soon — India's Agricultural OS"
+  description="The FarmWork mobile app is under development. Connecting farmers, workers, machinery, and input partners through one platform — coming soon to Android and iOS."
+  canonicalPath="/product"
+  pageType="ItemPage"
+  keywords={[
+    "FarmWork app",
+    "FarmWork app download",
+    "agriculture app India",
+    "farm worker app",
+    "farmer mobile app India",
+    "agritech mobile application",
+    "farm management app",
+    "agricultural labour app",
+    "rural workforce app India",
+    "tractor booking app India",
+    "farm machinery app",
+    "agri input app",
+    "farmer app Android",
+    "farmer app iOS",
+    "farm labour booking app",
+    "किसान ऐप",
+    "खेती ऐप डाउनलोड",
+    "कृषि मजदूर ऐप",
+  ]}
+>
+
+  <section class="product-page">
+    <div class="container">
+
+      <div class="product-hero fade-up">
+
+        <!-- Badge -->
+        <div class="coming-badge">
+          <span class="badge-dot"></span>
+          In Development
+        </div>
+
+        <h1 class="product-headline">
+          The app is <span class="hl">coming soon.</span>
+        </h1>
+
+        <p class="product-sub">
+          Built for Farmers, Worker Agents, Machinery Providers & Input Partners — all on one platform, designed for rural India.
+        </p>
+
+        <!-- Phone Mockup -->
+        <div class="phone-mock fade-up" style="animation-delay: 0.2s;">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="mock-header">
+                <span class="mock-logo"><span style="color: var(--primary);">Farm</span>Work</span>
+                <span class="mock-status">● Online</span>
+              </div>
+              <div class="mock-cards">
+                <div class="mock-card mc-1">
+                  <div class="mc-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                  </div>
+                  <span>Find Workers</span>
+                </div>
+                <div class="mock-card mc-2">
+                  <div class="mc-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06"/></svg>
+                  </div>
+                  <span>Book Machinery</span>
+                </div>
+                <div class="mock-card mc-3">
+                  <div class="mc-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  </div>
+                  <span>Input Store</span>
+                </div>
+                <div class="mock-card mc-4">
+                  <div class="mc-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  </div>
+                  <span>Farm Records</span>
+                </div>
+              </div>
+              <div class="mock-cta-bar">
+                <span class="mock-cta-text">Get Started</span>
+                <div class="mock-cta-shimmer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Store Buttons -->
+        <div class="store-buttons fade-up" style="animation-delay: 0.35s;">
+          <button class="store-btn" disabled aria-label="Google Play Store - Coming Soon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zM14.5 12.707l2.608 2.608-8.47 4.82 5.862-7.428zm2.608-5.315L14.5 11.293l-5.862-7.428 8.47 4.82zm1.907 1.085l-1.907 1.522L14.5 12l2.608-1.999 1.907 1.522-.001-.046zM19.71 10.57l-2.01 1.43 2.01 1.43c.54.38.54 1.14 0 1.52l-2.23 1.59-2.98-2.98L17.48 12l-2.98-2.56 2.98-2.98 2.23 1.59c.54.38.54 1.14 0 1.52z"/></svg>
+            <div class="store-text">
+              <span class="store-label">GET IT ON</span>
+              <span class="store-name">Google Play</span>
+            </div>
+            <span class="store-soon">Soon</span>
+          </button>
+          <button class="store-btn" disabled aria-label="Apple App Store - Coming Soon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div class="store-text">
+              <span class="store-label">Download on the</span>
+              <span class="store-name">App Store</span>
+            </div>
+            <span class="store-soon">Soon</span>
+          </button>
+        </div>
+
+        <p class="product-note">
+          Get notified when we launch — <a href={getPath("/contact")}>leave your email here</a>.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .product-page {
+    min-height: 100vh;
+    padding: 8rem 0 6rem;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .product-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ── Badge ── */
+  .coming-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 99px;
+    background: rgba(21, 128, 61, 0.06);
+    border: 1px solid rgba(21, 128, 61, 0.15);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes dotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+  }
+
+  .product-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hl {
+    color: var(--primary);
+  }
+
+  .product-sub {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  /* ── Phone Mockup ── */
+  .phone-mock {
+    margin-bottom: 3rem;
+  }
+
+  .phone-frame {
+    width: 280px;
+    background: #0f172a;
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(255,255,255,0.06) inset;
+    position: relative;
+  }
+
+  .phone-notch {
+    width: 100px;
+    height: 26px;
+    background: #0f172a;
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    margin-bottom: -13px;
+  }
+
+  .phone-screen {
+    background: #ffffff;
+    border-radius: 26px;
+    padding: 2rem 1.25rem 1.5rem;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .mock-logo {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+  }
+
+  .mock-status {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+  }
+
+  .mock-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
+  .mock-card {
+    background: var(--bg-color);
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0;
+    animation: mockCardIn 0.4s ease forwards;
+  }
+
+  .mc-1 { animation-delay: 0.5s; }
+  .mc-2 { animation-delay: 0.65s; }
+  .mc-3 { animation-delay: 0.8s; }
+  .mc-4 { animation-delay: 0.95s; }
+
+  @keyframes mockCardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .mc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(21, 128, 61, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+
+  .mock-cta-bar {
+    margin-top: 1rem;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mock-cta-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mock-cta-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255,255,255,0.2) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* ── Store Buttons ── */
+  .store-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .store-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--text-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    cursor: not-allowed;
+    opacity: 0.55;
+    position: relative;
+    transition: opacity 0.2s;
+  }
+
+  .store-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .store-label {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+  }
+
+  .store-name {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+  }
+
+  .store-soon {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    line-height: 1;
+  }
+
+  .product-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .product-note a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(21, 128, 61, 0.3);
+    transition: border-color 0.2s;
+  }
+
+  .product-note a:hover {
+    border-color: var(--primary);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .product-page {
+      padding: 6rem 0 4rem;
+    }
+    .store-buttons {
+      flex-direction: column;
+      width: 100%;
+      max-width: 280px;
+    }
+    .store-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .phone-frame {
+      width: 250px;
+    }
+  }
+</style>
